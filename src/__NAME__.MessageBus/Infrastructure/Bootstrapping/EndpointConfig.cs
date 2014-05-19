@@ -1,4 +1,6 @@
-﻿using Crux.NServiceBus.Extensions;
+﻿using System;
+using System.IO;
+using Crux.NServiceBus.Extensions;
 using Crux.StructureMap;
 using Microsoft.Practices.ServiceLocation;
 using NServiceBus;
@@ -12,6 +14,9 @@ namespace __NAME__.MessageBus.Infrastructure.Bootstrapping
     {
         void IWantCustomInitialization.Init()
         {
+            // When running as a service the current directory will be %System%
+            Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);  
+
             InitServiceBus();
 
             InitStructureMap();
