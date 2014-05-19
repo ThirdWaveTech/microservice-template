@@ -1,6 +1,6 @@
 ﻿using StructureMap.Configuration.DSL;
 
-namespace __NAME__.MessageBus.Infrastructure.Config
+namespace __NAME__.MessageBus.Infrastructure.Bootstrapping
 {
     public class ServiceRegistry : Registry
     {

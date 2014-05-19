@@ -32,10 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Crux.Core">
+    <Reference Include="Crux.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Crux.Core.0.1.0\lib\net40\Crux.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Crux.Domain">
+    <Reference Include="Crux.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Crux.Domain.0.1.0\lib\net40\Crux.Domain.dll</HintPath>
     </Reference>
     <Reference Include="Crux.Logging">
@@ -50,7 +52,8 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.ServiceLocation">
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
     <Reference Include="NServiceBus">
@@ -77,8 +80,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Infrastructure\Config\EndpointConfig.cs" />
-    <Compile Include="Infrastructure\Config\ServiceRegistry.cs" />
+    <Compile Include="Infrastructure\Bootstrapping\EndpointConfig.cs" />
+    <Compile Include="Infrastructure\Bootstrapping\ServiceRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,7 @@ using NServiceBus;
 using NServiceBus.Features;
 using StructureMap;
 
-namespace __NAME__.MessageBus.Infrastructure.Config
+namespace __NAME__.MessageBus.Infrastructure.Bootstrapping
 {
     [EndpointName("__NAME__.input")]
     public class EndpointConfig : IConfigureThisEndpoint, AsA_Server, IWantCustomInitialization
@@ -50,7 +50,8 @@ namespace __NAME__.MessageBus.Infrastructure.Config
         private void InitStructureMap()
         {
             ObjectFactory.Configure(c => c.Scan(s => {
-                s.TheCallingAssembly(); s.LookForRegistries();
+                s.TheCallingAssembly(); 
+                s.LookForRegistries();
             }));
         }
     }
