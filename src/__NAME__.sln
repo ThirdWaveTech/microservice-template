@@ -37,6 +37,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "__NAME__.Domain.Persistence
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{436FEA75-7E60-457F-8F82-904018A1BED5}"
 	ProjectSection(SolutionItems) = preProject
+		nuget.config = nuget.config
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
