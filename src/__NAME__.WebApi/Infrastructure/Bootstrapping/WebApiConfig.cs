@@ -11,7 +11,7 @@ namespace __NAME__.WebApi.Infrastructure.Bootstrapping
         {
             config.Routes.MapHttpRoute(
                name: "DefaultApi",
-               routeTemplate: "{tenantid}/{controller}/{id}",
+               routeTemplate: "api/{controller}/{id}",
                defaults: new { id = RouteParameter.Optional });
 
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
