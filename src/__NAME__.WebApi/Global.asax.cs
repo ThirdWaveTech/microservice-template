@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Web.Http;
+using __NAME__.WebApi.Infrastructure.Bootstrapping;
 
 namespace __NAME__.WebApi
 {
@@ -7,37 +9,9 @@ namespace __NAME__.WebApi
 
         protected void Application_Start(object sender, EventArgs e)
         {
-
-        }
-
-        protected void Session_Start(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Application_BeginRequest(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Application_AuthenticateRequest(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Application_Error(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Session_End(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Application_End(object sender, EventArgs e)
-        {
-
+            GlobalConfiguration.Configure(WebApiConfig.Register);
+            FilterConfig.RegisterGlobalFilters(GlobalConfiguration.Configuration.Filters);
+            Bootstrapper.Bootstrap();
         }
     }
 }
