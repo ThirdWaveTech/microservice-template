@@ -52,7 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Migrations\" />
-    <Folder Include="_Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="_Scripts\seed.sql" />
+    <Content Include="_Scripts\drop.sql" />
+    <Content Include="_Scripts\create.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

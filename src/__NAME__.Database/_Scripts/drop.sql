@@ -1,0 +1,2 @@
+﻿DROP DATABASE __NAME__
+GO

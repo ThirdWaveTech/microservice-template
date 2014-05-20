@@ -1,0 +1,2 @@
+﻿CREATE DATABASE __NAME__
+GO

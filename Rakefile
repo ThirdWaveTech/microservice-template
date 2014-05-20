@@ -4,7 +4,7 @@ CruxRake::Solution.new do |s|
   s.file = 'src/__NAME__.sln'
 
   s.database do |db|
-    db.instance = ENV['DATABASE_SERVER'] || '(local)'
+    db.instance = ENV['DATABASE_SERVER'] || 'localhost'
     db.name = ENV['DATABASE_NAME'] || '__NAME__'
     db.project = '__NAME__.Database'
   end
