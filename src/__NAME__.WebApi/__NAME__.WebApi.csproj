@@ -139,13 +139,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseEndpoint.cs" />
     <Compile Include="Endpoint\Ping.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Bootstrapping\FilterConfig.cs" />
-    <Compile Include="Infrastructure\HttpControllerTypeResolver.cs" />
     <Compile Include="Infrastructure\Bootstrapping\Bootstrapper.cs" />
     <Compile Include="Infrastructure\Bootstrapping\NHibernateRegistry.cs" />
     <Compile Include="Infrastructure\Bootstrapping\SiteRegistry.cs" />

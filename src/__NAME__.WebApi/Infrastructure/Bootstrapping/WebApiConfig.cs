@@ -2,6 +2,7 @@
 using System.Reflection;
 using System.Web.Http;
 using System.Web.Http.Dispatcher;
+using Crux.WebApi.Infrastructure;
 
 namespace __NAME__.WebApi.Infrastructure.Bootstrapping
 {
@@ -9,6 +10,7 @@ namespace __NAME__.WebApi.Infrastructure.Bootstrapping
     {
         public static void Register(HttpConfiguration config)
         {
+            config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(
                name: "DefaultApi",
                routeTemplate: "api/{controller}/{id}",
