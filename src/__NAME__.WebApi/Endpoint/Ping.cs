@@ -1,4 +1,6 @@
-﻿namespace __NAME__.WebApi.Endpoint
+﻿using Crux.WebApi;
+
+namespace __NAME__.WebApi.Endpoint
 {
     public class Ping : BaseEndpoint
     {
