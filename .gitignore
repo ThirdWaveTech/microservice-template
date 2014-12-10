@@ -200,3 +200,6 @@ working/*
 working*
 
 src/SouthFloridaVision.userprefs
+
+# Ignore NancyFx keyStore
+keyStore/
