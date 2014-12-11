@@ -33,13 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Crux.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Crux.Core.0.1.27\lib\net40\Crux.Core.dll</HintPath>
+    <Reference Include="Crux.Core">
+      <HintPath>..\packages\Crux.Core.0.1.30\lib\net40\Crux.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Crux.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Crux.Domain.0.1.27\lib\net40\Crux.Domain.dll</HintPath>
+      <HintPath>..\packages\Crux.Domain.0.1.30\lib\net40\Crux.Domain.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
