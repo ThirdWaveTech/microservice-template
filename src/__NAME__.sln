@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "__NAME__.Api.Messages", "__
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "__NAME__.Host", "__NAME__.Host\__NAME__.Host.csproj", "{042305AF-78BB-465B-A56B-BAAB48055EEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "__NAME__.Domain.Persistence.Tests", "__NAME__.Domain.Persistence.Tests\__NAME__.Domain.Persistence.Tests.csproj", "{734594CF-7B6F-43C4-9287-B76C7F871399}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{042305AF-78BB-465B-A56B-BAAB48055EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{042305AF-78BB-465B-A56B-BAAB48055EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{042305AF-78BB-465B-A56B-BAAB48055EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{734594CF-7B6F-43C4-9287-B76C7F871399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{734594CF-7B6F-43C4-9287-B76C7F871399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{734594CF-7B6F-43C4-9287-B76C7F871399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{734594CF-7B6F-43C4-9287-B76C7F871399}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,5 +100,6 @@ Global
 		{E444FF50-C834-44A0-B97E-657BEB5AFFC8} = {76277D87-4086-4B93-8AE2-0F7BC4DD82D3}
 		{362C291F-0977-4329-882C-0562EA5FC5CD} = {06509F04-F11B-428B-84D4-44D5808AE5E3}
 		{042305AF-78BB-465B-A56B-BAAB48055EEC} = {7C79CCED-5B1B-4DEE-96D4-45030A14DB12}
+		{734594CF-7B6F-43C4-9287-B76C7F871399} = {6071D6A5-C3E5-4942-8B17-C7BDAC90F8B2}
 	EndGlobalSection
 EndGlobal
