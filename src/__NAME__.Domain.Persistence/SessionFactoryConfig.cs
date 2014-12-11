@@ -22,6 +22,7 @@ namespace __NAME__.Domain.Persistence
                 .Database(GetMsSqlConfiguration())
                 .ExposeConfiguration(config =>
                     config.SetProperty(Environment.SqlExceptionConverter, typeof(SqlExceptionConverter).AssemblyQualifiedName))
+                .CurrentSessionContext("thread_static")
                 .Mappings(m => m.FluentMappings
                     .AddFromAssembly(GetType().Assembly)
                     .Conventions.Add<TreatStringAsSqlAnsiStringConvention>()
