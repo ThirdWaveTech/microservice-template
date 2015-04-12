@@ -1,4 +1,5 @@
-﻿using Crux.Domain.Persistence.NHibernate.Config;
+﻿using System.Reflection;
+using Crux.Domain.Persistence.NHibernate.Config;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
@@ -8,24 +9,33 @@ namespace __NAME__.Domain.Persistence
 {
     public class SessionFactoryConfig
     {
-        private const string CONNECTION_STRING = "__NAME__";
+        private readonly string _connectionStringKey;
 
-        protected virtual MsSqlConfiguration GetMsSqlConfiguration()
+        public SessionFactoryConfig(string connectionStringKey)
         {
-            return MsSqlConfiguration.MsSql2012
-                .ConnectionString(b => b.FromConnectionStringWithKey(CONNECTION_STRING));
+            _connectionStringKey = connectionStringKey;
         }
 
-        public ISessionFactory CreateSessionFactory()
+        protected virtual IPersistenceConfigurer GetDatabaseConfiguration()
+        {
+            return MsSqlConfiguration.MsSql2012
+                .ConnectionString(b => b.FromConnectionStringWithKey(_connectionStringKey));
+        }
+
+        public virtual ISessionFactory CreateSessionFactory()
+        {
+            return CreateSessionFactory(GetType().Assembly);
+        }
+
+        protected ISessionFactory CreateSessionFactory(Assembly classMapAssembly)
         {
             return Fluently.Configure()
-                .Database(GetMsSqlConfiguration())
-                .ExposeConfiguration(config =>
-                    config.SetProperty(Environment.SqlExceptionConverter, typeof(SqlExceptionConverter).AssemblyQualifiedName))
-                .CurrentSessionContext("thread_static")
-                .Mappings(m => m.FluentMappings
-                    .AddFromAssembly(GetType().Assembly)
-                    .Conventions.Add<TreatStringAsSqlAnsiStringConvention>()
+                .Database(GetDatabaseConfiguration())
+                .ExposeConfiguration(config => config.SetProperty(Environment.SqlExceptionConverter, typeof(SqlExceptionConverter).AssemblyQualifiedName))
+                .Mappings(m => 
+                    m.FluentMappings
+                        .AddFromAssembly(classMapAssembly)
+                        .Conventions.Add<TreatStringAsSqlAnsiStringConvention>()
                 ).BuildSessionFactory();
         }
     }

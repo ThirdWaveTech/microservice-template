@@ -1,60 +1,74 @@
 ﻿using System;
 using System.IO;
-using Crux.NServiceBus.Extensions;
 using Crux.StructureMap;
 using Microsoft.Practices.ServiceLocation;
 using NServiceBus;
 using NServiceBus.Features;
+using NServiceBus.Log4Net;
 using StructureMap;
+using StructureMap.Graph;
 
 namespace __NAME__.MessageBus.Infrastructure.Bootstrapping
 {
     [EndpointName("__NAME__.input")]
-    public class EndpointConfig : IConfigureThisEndpoint, AsA_Server, IWantCustomInitialization
+    public class EndpointConfig : IConfigureThisEndpoint, AsA_Server, INeedInitialization
     {
-        void IWantCustomInitialization.Init()
+        public void Customize(BusConfiguration config)
         {
             // When running as a service the current directory will be %System%
-            Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);  
+            Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
+            
+            InitLogging();
 
-            InitServiceBus();
+            var container = new Container();
 
-            InitStructureMap();
+            InitServiceBus(config, container);
 
-            InitServiceLocator();
+            InitStructureMap(container);
+
+            InitServiceLocator(container);
         }
 
-        private void InitServiceBus()
+        private void InitLogging()
         {
-            Configure.Serialization.Xml();
+            // Configure Log4net using configuration section
+            log4net.Config.XmlConfigurator.Configure();
+        }
+
+        private void InitServiceBus(BusConfiguration config, IContainer container)
+        {
+            // Configure Logging
+            NServiceBus.Logging.LogManager.Use<Log4NetFactory>();
+
+            // Configure container
+            config.UseContainer<StructureMapBuilder>(c => c.ExistingContainer(container));
+
+            // Xml serialization makes for easy to read messages.
+            config.UseSerialization<XmlSerializer>();
 
             // Keep it simple by default
-            Configure.Features
-                .Disable<SecondLevelRetries>()
-                .Disable<AutoSubscribe>()
-                .Disable<TimeoutManager>();
+            config.DisableFeature<SecondLevelRetries>();
+            config.DisableFeature<AutoSubscribe>();
+            config.DisableFeature<TimeoutManager>();
+            config.DisableFeature<DataBus>();
 
-            Configure.Transactions.Enable();
+            // Configure for MSMQ
+            config.UseTransport<MsmqTransport>();
+            config.Transactions().Enable();
+            config.PurgeOnStartup(false);
 
-            Configure.With()
-                .StructureMapBuilder(ObjectFactory.Container)
-                .DefaultMessageNamingConventions()
-                .Log4Net()
-                .UseTransport<Msmq>()
-                    .PurgeOnStartup(false)
-                .UnicastBus()
-                    .LoadMessageHandlers()
-                ;
+            // Configure Saga Persistence
+            config.UsePersistence<InMemoryPersistence>();
         }
 
-        private void InitServiceLocator()
+        private void InitServiceLocator(IContainer container)
         {
-            ServiceLocator.SetLocatorProvider(() => new StructureMapServiceLocator(ObjectFactory.Container));
+            ServiceLocator.SetLocatorProvider(() => new StructureMapServiceLocator(container));
         }
 
-        private void InitStructureMap()
+        private void InitStructureMap(IContainer container)
         {
-            ObjectFactory.Configure(c => c.Scan(s => {
+            container.Configure(c => c.Scan(s => {
                 s.TheCallingAssembly(); 
                 s.LookForRegistries();
             }));

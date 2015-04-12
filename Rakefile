@@ -1,6 +1,6 @@
-require 'cruxrake'
+require 'physique'
 
-CruxRake::Solution.new do |s|
+Physique::Solution.new do |s|
   s.file = 'src/__NAME__.sln'
 
   s.database do |db|

@@ -2,6 +2,7 @@
 using Crux.StructureMap;
 using Microsoft.Practices.ServiceLocation;
 using StructureMap.Configuration.DSL;
+using StructureMap.Graph;
 
 namespace __NAME__.MessageBus.Infrastructure.Bootstrapping
 {
