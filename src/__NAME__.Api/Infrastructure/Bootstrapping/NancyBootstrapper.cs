@@ -20,8 +20,6 @@ namespace __NAME__.Api.Infrastructure.Bootstrapping
 
         protected override void ConfigureApplicationContainer(IContainer existingContainer)
         {
-            base.ConfigureApplicationContainer(existingContainer);
-
             existingContainer.Configure(c => c.Scan(s =>
             {
                 s.TheCallingAssembly();
@@ -52,11 +50,6 @@ namespace __NAME__.Api.Infrastructure.Bootstrapping
             mappingDefinitions.ForEach(mappingDefinition => mappingDefinition.Init());
 
             Mapper.AssertConfigurationIsValid();
-        }
-
-        protected override IContainer CreateRequestContainer(NancyContext context)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
