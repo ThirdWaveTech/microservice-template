@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Refit;
-using __NAME__.Messages.Models;
+using __NAME__.Models.ClientInfo;
 
 /* ******** Hey You! *********
  *

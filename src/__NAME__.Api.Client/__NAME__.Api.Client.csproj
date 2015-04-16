@@ -71,9 +71,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\__NAME__.Messages\__NAME__.Messages.csproj">
-      <Project>{d1d380b5-f384-4dba-86bf-9ecaea8b6fed}</Project>
-      <Name>__NAME__.Messages</Name>
+    <ProjectReference Include="..\__NAME__.Models\__NAME__.Models.csproj">
+      <Project>{71a42623-f570-45fc-b7cf-b8cf4ebca747}</Project>
+      <Name>__NAME__.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,10 +5,12 @@ using Refit;
 
 /*****
  *  In order to use this client add the following to your appconfig or webconfig
- *  <__NAME___Settings file="App_Data\Config\__NAME__Settings.config" />
- * 
- * 
- * 
+ *  <__NAME__Settings file="App_Data\Config\__NAME__Settings.config" />
+ *  In your file you should add the following : 
+ *   </__NAME__Settings>
+ *   <add key="__NAME__.api.path" value ="***PATHTOAPI***"/>
+ *   </__NAME__Settings>
+ *  
  * 
  ******/
 namespace __NAME__.Api.Client
