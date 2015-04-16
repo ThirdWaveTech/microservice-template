@@ -1,4 +1,5 @@
-﻿using Nancy;
+﻿using System.Web;
+using Nancy;
 
 namespace __NAME__.Api.Modules
 {
@@ -7,7 +8,15 @@ namespace __NAME__.Api.Modules
         public static string ClientInfoModulePath = "clientinfo";
         public ClientInfoModule() : base(ClientInfoModulePath)
         {
-            
+            Post["/register"] = _ =>
+                       {
+                           //TODO: Send nservicebus message.
+
+                           return new Response()
+                                  {
+                                      StatusCode = HttpStatusCode.OK
+                                  };
+                       };
         }
     }
 }
