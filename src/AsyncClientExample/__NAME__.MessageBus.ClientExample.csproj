@@ -7,8 +7,8 @@
     <ProjectGuid>{AE1A2A5A-4C9F-4F72-AD77-73117F611077}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AsyncClientExample</RootNamespace>
-    <AssemblyName>AsyncClientExample</AssemblyName>
+    <RootNamespace>__NAME__.MessageBus.ClientExample</RootNamespace>
+    <AssemblyName>__NAME__.MessageBus.ClientExample</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -58,9 +58,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\__NAME__.Api.Client.Async\__NAME__.Api.AsyncClient.csproj">
+    <ProjectReference Include="..\__NAME__.MessageBus.Client\__NAME__.MessageBus.Client.csproj">
       <Project>{BF52672C-CD40-41D7-A4A8-58C978F4CC72}</Project>
-      <Name>__NAME__.Api.AsyncClient</Name>
+      <Name>__NAME__.MessageBus.Client</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

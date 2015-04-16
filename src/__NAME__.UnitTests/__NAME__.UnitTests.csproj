@@ -68,10 +68,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\__NAME__.Api.Client.Async\__NAME__.Api.AsyncClient.csproj">
-      <Project>{bf52672c-cd40-41d7-a4a8-58c978f4cc72}</Project>
-      <Name>__NAME__.Api.AsyncClient</Name>
-    </ProjectReference>
     <ProjectReference Include="..\__NAME__.Api.Client\__NAME__.Api.Client.csproj">
       <Project>{362c291f-0977-4329-882c-0562ea5fc5cd}</Project>
       <Name>__NAME__.Api.Client</Name>

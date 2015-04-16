@@ -7,8 +7,8 @@
     <ProjectGuid>{BF52672C-CD40-41D7-A4A8-58C978F4CC72}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>__NAME__.Api.Client.Async</RootNamespace>
-    <AssemblyName>__NAME__.Api.Client.Async</AssemblyName>
+    <RootNamespace>__NAME__.MessageBus.Client</RootNamespace>
+    <AssemblyName>__NAME__.MessageBus.Client</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -61,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrap\SendOnlyClientRegistry.cs" />
-    <Compile Include="__NAME__AsyncClient.cs" />
+    <Compile Include="__NAME__Client.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
