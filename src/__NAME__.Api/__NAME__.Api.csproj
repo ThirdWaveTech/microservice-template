@@ -150,6 +150,7 @@
     <Compile Include="Infrastructure\Bootstrapping\NancyBootstrapper.cs" />
     <Compile Include="Infrastructure\Bootstrapping\Registries\AppRegistry.cs" />
     <Compile Include="Infrastructure\Bootstrapping\Registries\NHibernateRegistry.cs" />
+    <Compile Include="Mappings\ExampleMapper.cs" />
     <Compile Include="Modules\ClientInfoModule.cs" />
     <Compile Include="Modules\ExampleModule.cs" />
     <Compile Include="Modules\PingModule.cs" />
@@ -158,7 +159,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Diagnostics\" />
-    <Folder Include="Mappings\" />
     <Folder Include="Validation\" />
   </ItemGroup>
   <ItemGroup>

@@ -69,6 +69,10 @@
       <Project>{362c291f-0977-4329-882c-0562ea5fc5cd}</Project>
       <Name>__NAME__.Api.Client</Name>
     </ProjectReference>
+    <ProjectReference Include="..\__NAME__.Models\__NAME__.Models.csproj">
+      <Project>{71a42623-f570-45fc-b7cf-b8cf4ebca747}</Project>
+      <Name>__NAME__.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
