@@ -20,7 +20,7 @@ namespace __NAME__.MessageBus.ClientExample
             });
 
 
-            var client = ObjectFactory.GetInstance<__NAME__Client>();
+            var client = ObjectFactory.GetInstance<Sender>();
 
             client.Register("Sample client");
         }

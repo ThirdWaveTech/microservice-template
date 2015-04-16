@@ -61,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrap\SendOnlyClientRegistry.cs" />
-    <Compile Include="__NAME__Client.cs" />
+    <Compile Include="Sender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

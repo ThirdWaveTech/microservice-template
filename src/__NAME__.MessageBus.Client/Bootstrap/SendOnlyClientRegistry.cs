@@ -28,7 +28,7 @@ namespace __NAME__.MessageBus.Client.Bootstrap
 
             ForSingletonOf<ISendOnlyBus>().Use(bus);
 
-            ForSingletonOf<__NAME__Client>().Use(new __NAME__Client(bus));
+            ForSingletonOf<Sender>().Use(new Sender(bus));
         }
     }
 }
