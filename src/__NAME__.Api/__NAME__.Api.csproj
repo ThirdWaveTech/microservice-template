@@ -151,6 +151,7 @@
     <Compile Include="Infrastructure\Bootstrapping\Registries\AppRegistry.cs" />
     <Compile Include="Infrastructure\Bootstrapping\Registries\NHibernateRegistry.cs" />
     <Compile Include="Modules\ClientInfoModule.cs" />
+    <Compile Include="Modules\ExampleModule.cs" />
     <Compile Include="Modules\PingModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -168,6 +169,10 @@
     <ProjectReference Include="..\__NAME__.Domain\__NAME__.Domain.csproj">
       <Project>{386b7c40-6861-4e03-b94b-81d624bb4ca6}</Project>
       <Name>__NAME__.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\__NAME__.Models\__NAME__.Models.csproj">
+      <Project>{71a42623-f570-45fc-b7cf-b8cf4ebca747}</Project>
+      <Name>__NAME__.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
