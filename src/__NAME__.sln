@@ -51,6 +51,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "__NAME__.AcceptanceTests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "__NAME__.Api.AsyncClient", "__NAME__.Api.Client.Async\__NAME__.Api.AsyncClient.csproj", "{BF52672C-CD40-41D7-A4A8-58C978F4CC72}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{D165DF83-7D31-46CA-AFAB-4E04F0D52135}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncClientExample", "AsyncClientExample\AsyncClientExample.csproj", "{AE1A2A5A-4C9F-4F72-AD77-73117F611077}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +105,10 @@ Global
 		{BF52672C-CD40-41D7-A4A8-58C978F4CC72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF52672C-CD40-41D7-A4A8-58C978F4CC72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF52672C-CD40-41D7-A4A8-58C978F4CC72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE1A2A5A-4C9F-4F72-AD77-73117F611077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE1A2A5A-4C9F-4F72-AD77-73117F611077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE1A2A5A-4C9F-4F72-AD77-73117F611077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE1A2A5A-4C9F-4F72-AD77-73117F611077}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,5 +125,6 @@ Global
 		{11A056E7-6BA8-45A3-AF3F-7E369A8FC5C2} = {6071D6A5-C3E5-4942-8B17-C7BDAC90F8B2}
 		{3FE003CC-4F00-463E-BDC7-AD55DA676E30} = {6071D6A5-C3E5-4942-8B17-C7BDAC90F8B2}
 		{BF52672C-CD40-41D7-A4A8-58C978F4CC72} = {087211A4-5E68-4EB4-A779-7ECAF4A8777F}
+		{AE1A2A5A-4C9F-4F72-AD77-73117F611077} = {D165DF83-7D31-46CA-AFAB-4E04F0D52135}
 	EndGlobalSection
 EndGlobal

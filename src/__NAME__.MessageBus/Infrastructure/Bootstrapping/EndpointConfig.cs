@@ -44,7 +44,13 @@ namespace __NAME__.MessageBus.Infrastructure.Bootstrapping
             config.UseContainer<StructureMapBuilder>(c => c.ExistingContainer(container));
 
             // Xml serialization makes for easy to read messages.
-            config.UseSerialization<XmlSerializer>();
+            config.UseSerialization<JsonSerializer>();
+
+            //Define conventions
+            ConventionsBuilder conventions = config.Conventions();
+            conventions.DefiningCommandsAs(t => t.Namespace != null && t.Namespace.StartsWith("__NAME__") && t.Namespace.EndsWith("Commands"));
+            conventions.DefiningEventsAs(t => t.Namespace != null && t.Namespace.StartsWith("__NAME__") && t.Namespace.EndsWith("Events"));
+            conventions.DefiningMessagesAs(t => t.Namespace != null && t.Namespace.StartsWith("__NAME__") && t.Namespace.EndsWith("Messages"));
 
             // Keep it simple by default
             config.DisableFeature<SecondLevelRetries>();
