@@ -10,7 +10,7 @@ namespace __NAME__.AcceptanceTests
     {
         public Class1()
         {
-            var client = new __NAME__.Api.Client.__NAME__Client();
+            var client = new __NAME__.Api.Client.__NAME__ClientFactory();
 
         }
     }
