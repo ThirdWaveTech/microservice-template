@@ -46,6 +46,12 @@
   <ItemGroup>
     <Folder Include="Events\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\__NAME__.Models\__NAME__.Models.csproj">
+      <Project>{71A42623-F570-45FC-B7CF-B8CF4EBCA747}</Project>
+      <Name>__NAME__.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

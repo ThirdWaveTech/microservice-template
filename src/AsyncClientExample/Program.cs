@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using StructureMap;
+﻿using StructureMap;
 using StructureMap.Graph;
-using __NAME__.Api.AsyncClient;
-using __NAME__.Api.Client.Async.Bootstrap;
+using __NAME__.MessageBus.Client;
+using __NAME__.MessageBus.Client.Bootstrap;
 
-namespace AsyncClientExample
+namespace __NAME__.MessageBus.ClientExample
 {
     class Program
     {
@@ -25,7 +20,7 @@ namespace AsyncClientExample
             });
 
 
-            var client = ObjectFactory.GetInstance<__NAME__AsyncClient>();
+            var client = ObjectFactory.GetInstance<__NAME__Client>();
 
             client.Register("Sample client");
         }

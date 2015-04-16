@@ -49,8 +49,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "__NAME__.IntegrationTests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "__NAME__.AcceptanceTests", "__NAME__.AcceptanceTests\__NAME__.AcceptanceTests.csproj", "{3FE003CC-4F00-463E-BDC7-AD55DA676E30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "__NAME__.Api.AsyncClient", "__NAME__.Api.Client.Async\__NAME__.Api.AsyncClient.csproj", "{BF52672C-CD40-41D7-A4A8-58C978F4CC72}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{D165DF83-7D31-46CA-AFAB-4E04F0D52135}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncClientExample", "AsyncClientExample\AsyncClientExample.csproj", "{AE1A2A5A-4C9F-4F72-AD77-73117F611077}"
@@ -58,6 +56,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "__NAME__.Models", "__NAME__.Models\__NAME__.Models.csproj", "{71A42623-F570-45FC-B7CF-B8CF4EBCA747}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "__NAME__.Example.Api.Client", "__NAME__.Example.Api.Client\__NAME__.Example.Api.Client.csproj", "{4080D184-73B1-4709-BDD4-3194F9008F5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "__NAME__.MessageBus.Client", "__NAME__.MessageBus.Client\__NAME__.MessageBus.Client.csproj", "{BF52672C-CD40-41D7-A4A8-58C978F4CC72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,10 +105,6 @@ Global
 		{3FE003CC-4F00-463E-BDC7-AD55DA676E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FE003CC-4F00-463E-BDC7-AD55DA676E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FE003CC-4F00-463E-BDC7-AD55DA676E30}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BF52672C-CD40-41D7-A4A8-58C978F4CC72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF52672C-CD40-41D7-A4A8-58C978F4CC72}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF52672C-CD40-41D7-A4A8-58C978F4CC72}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF52672C-CD40-41D7-A4A8-58C978F4CC72}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AE1A2A5A-4C9F-4F72-AD77-73117F611077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AE1A2A5A-4C9F-4F72-AD77-73117F611077}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE1A2A5A-4C9F-4F72-AD77-73117F611077}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -121,6 +117,10 @@ Global
 		{4080D184-73B1-4709-BDD4-3194F9008F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4080D184-73B1-4709-BDD4-3194F9008F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4080D184-73B1-4709-BDD4-3194F9008F5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF52672C-CD40-41D7-A4A8-58C978F4CC72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF52672C-CD40-41D7-A4A8-58C978F4CC72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF52672C-CD40-41D7-A4A8-58C978F4CC72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF52672C-CD40-41D7-A4A8-58C978F4CC72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

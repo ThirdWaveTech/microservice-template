@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using StructureMap;
 using StructureMap.Graph;
-using __NAME__.Api.AsyncClient;
-using __NAME__.Api.Client.Async.Bootstrap;
+using __NAME__.MessageBus.Client;
+using __NAME__.MessageBus.Client.Bootstrap;
 
 namespace __NAME__.AcceptanceTests
 {

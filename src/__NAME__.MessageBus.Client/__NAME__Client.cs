@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NServiceBus;
+﻿using NServiceBus;
 using __NAME__.Messages.Commands;
 
-namespace __NAME__.Api.AsyncClient
+namespace __NAME__.MessageBus.Client
 {
     
-    public class __NAME__AsyncClient
+    public class __NAME__Client
     {
         private readonly ISendOnlyBus _bus;
 
-        public __NAME__AsyncClient(ISendOnlyBus bus)
+        public __NAME__Client(ISendOnlyBus bus)
         {
             _bus = bus;
         }

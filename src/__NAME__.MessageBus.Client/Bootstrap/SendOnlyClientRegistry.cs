@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using NServiceBus;
+﻿using NServiceBus;
 using NServiceBus.Features;
 using StructureMap;
 using StructureMap.Configuration.DSL;
-using __NAME__.Api.AsyncClient;
-using __NAME__.Messages.Commands;
 
-namespace __NAME__.Api.Client.Async.Bootstrap
+namespace __NAME__.MessageBus.Client.Bootstrap
 {
     public class SendOnlyClientRegistry: Registry
     {
@@ -36,7 +28,7 @@ namespace __NAME__.Api.Client.Async.Bootstrap
 
             ForSingletonOf<ISendOnlyBus>().Use(bus);
 
-            ForSingletonOf<__NAME__AsyncClient>().Use(new __NAME__AsyncClient(bus));
+            ForSingletonOf<__NAME__Client>().Use(new __NAME__Client(bus));
         }
     }
 }

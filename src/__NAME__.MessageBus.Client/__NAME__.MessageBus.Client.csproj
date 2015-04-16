@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9F6DB1B2-BE6B-4C28-9CD7-6B9252084300}</ProjectGuid>
+    <ProjectGuid>{BF52672C-CD40-41D7-A4A8-58C978F4CC72}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>__NAME__.UnitTests</RootNamespace>
-    <AssemblyName>__NAME__.UnitTests</AssemblyName>
+    <RootNamespace>__NAME__.MessageBus.Client</RootNamespace>
+    <AssemblyName>__NAME__.MessageBus.Client</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,23 +32,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Crux.Core">
-      <HintPath>..\packages\Crux.Core.0.1.43\lib\net40\Crux.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Crux.Domain">
-      <HintPath>..\packages\Crux.Domain.0.1.43\lib\net40\Crux.Domain.dll</HintPath>
-    </Reference>
-    <Reference Include="FluentAssertions">
-      <HintPath>..\packages\FluentAssertions.3.3.0\lib\net45\FluentAssertions.dll</HintPath>
-    </Reference>
-    <Reference Include="FluentAssertions.Core">
-      <HintPath>..\packages\FluentAssertions.3.3.0\lib\net45\FluentAssertions.Core.dll</HintPath>
+    <Reference Include="Crux.StructureMap">
+      <HintPath>..\packages\Crux.StructureMap.0.1.43\lib\net40\Crux.StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    <Reference Include="NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus.5.2.0\lib\net45\NServiceBus.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.ObjectBuilder.StructureMap">
+      <HintPath>..\packages\NServiceBus.StructureMap.5.0.1\lib\net45\NServiceBus.ObjectBuilder.StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.3.1.4.143\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Net4">
+      <HintPath>..\packages\structuremap.3.1.4.143\lib\net40\StructureMap.Net4.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,7 +60,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\ExampleEntityTester.cs" />
+    <Compile Include="Bootstrap\SendOnlyClientRegistry.cs" />
+    <Compile Include="__NAME__Client.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,13 +69,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\__NAME__.Api.Client\__NAME__.Api.Client.csproj">
-      <Project>{362c291f-0977-4329-882c-0562ea5fc5cd}</Project>
-      <Name>__NAME__.Api.Client</Name>
+    <ProjectReference Include="..\__NAME__.Messages\__NAME__.Messages.csproj">
+      <Project>{d1d380b5-f384-4dba-86bf-9ecaea8b6fed}</Project>
+      <Name>__NAME__.Messages</Name>
     </ProjectReference>
-    <ProjectReference Include="..\__NAME__.Domain\__NAME__.Domain.csproj">
-      <Project>{386b7c40-6861-4e03-b94b-81d624bb4ca6}</Project>
-      <Name>__NAME__.Domain</Name>
+    <ProjectReference Include="..\__NAME__.Models\__NAME__.Models.csproj">
+      <Project>{71A42623-F570-45FC-B7CF-B8CF4EBCA747}</Project>
+      <Name>__NAME__.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
