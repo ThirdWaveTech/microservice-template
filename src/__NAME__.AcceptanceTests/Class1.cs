@@ -8,5 +8,10 @@ namespace __NAME__.AcceptanceTests
 {
     public class Class1
     {
+        public Class1()
+        {
+            var client = new __NAME__.Api.Client.__NAME__Client();
+
+        }
     }
 }
