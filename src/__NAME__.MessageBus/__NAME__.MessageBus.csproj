@@ -109,6 +109,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handlers\ForMessages\RegisterClientCommandHandler.cs" />
     <Compile Include="Infrastructure\Bootstrapping\EndpointConfig.cs" />
     <Compile Include="Infrastructure\Bootstrapping\NHibernateRegistry.cs" />
     <Compile Include="Infrastructure\Bootstrapping\ServiceRegistry.cs" />
@@ -137,7 +138,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Handlers\ForEvents\" />
-    <Folder Include="Handlers\ForMessages\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\__NAME__.Domain.Persistence\__NAME__.Domain.Persistence.csproj">

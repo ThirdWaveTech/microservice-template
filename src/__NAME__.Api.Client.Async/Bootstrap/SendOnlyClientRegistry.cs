@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using NServiceBus;
 using NServiceBus.Features;
 using StructureMap.Configuration.DSL;
+using __NAME__.Api.AsyncClient;
 
 namespace __NAME__.Api.Client.Async.Bootstrap
 {
-    class SendOnlyClientRegistry: Registry
+    public class SendOnlyClientRegistry: Registry
     {
         public SendOnlyClientRegistry()
         {
@@ -28,6 +29,7 @@ namespace __NAME__.Api.Client.Async.Bootstrap
 
             ForSingletonOf<ISendOnlyBus>().Use(bus);
 
+            ForSingletonOf<__NAME__AsyncClient>().Use(new __NAME__AsyncClient(bus));
         }
     }
 }
