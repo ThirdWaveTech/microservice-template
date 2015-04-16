@@ -156,6 +156,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Diagnostics\" />
     <Folder Include="Mappings\" />
     <Folder Include="Validation\" />
   </ItemGroup>

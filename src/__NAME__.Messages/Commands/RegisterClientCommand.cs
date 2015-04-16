@@ -3,22 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using __NAME__.Models.ClientInfo;
 
 namespace __NAME__.Messages.Commands
 {
-    public class RegisterClientCommand
+    public class RegisterClientCommand: RegisterClientModel
     {
-        public String ClientId { get; set; }
-
-        public RegisterClientCommand()
+        public RegisterClientCommand(string clientIdentifier):base(clientIdentifier)
         {
             
         }
-
-        public RegisterClientCommand(string clientIdentifier)
-        {
-            ClientId = clientIdentifier;
-        }
-
     }
 }
