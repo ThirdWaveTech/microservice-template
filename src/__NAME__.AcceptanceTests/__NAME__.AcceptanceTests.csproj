@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="AsynClientTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestClientTests\RestClientTester.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\__NAME__.Api.Client.Async\__NAME__.Api.AsyncClient.csproj">

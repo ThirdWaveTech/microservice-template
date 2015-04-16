@@ -147,6 +147,7 @@
     <Compile Include="Infrastructure\Bootstrapping\NancyBootstrapper.cs" />
     <Compile Include="Infrastructure\Bootstrapping\Registries\AppRegistry.cs" />
     <Compile Include="Infrastructure\Bootstrapping\Registries\NHibernateRegistry.cs" />
+    <Compile Include="Modules\ClientInfoModule.cs" />
     <Compile Include="Modules\PingModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
