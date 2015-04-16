@@ -4,7 +4,7 @@ using __NAME__.IntegrationTests.Infrastructure;
 
 namespace __NAME__.IntegrationTests.Persistence
 {
-    public class ExampleEntityPersistenceTester : DomainPersistenceTester
+    public class ExamplePersistenceTester : DomainPersistenceTester
     {
         public void should_save_and_load()
         {

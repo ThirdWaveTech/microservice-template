@@ -83,8 +83,7 @@
     <Compile Include="Infrastructure\BaseStatelessPersistenceTester.cs" />
     <Compile Include="Infrastructure\DefaultCompareConfig.cs" />
     <Compile Include="Infrastructure\TestSessionFactoryConfig.cs" />
-    <Compile Include="PersistenceTests\ExamplePersistenceTester.cs" />
-    <Compile Include="Persistence\ExampleEntityPersistenceTester.cs" />
+    <Compile Include="Persistence\ExamplePersistenceTester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
