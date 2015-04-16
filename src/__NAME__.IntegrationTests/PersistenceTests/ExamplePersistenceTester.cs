@@ -1,6 +1,15 @@
-﻿namespace __NAME__.IntegrationTests.PersistenceTests
+﻿using NUnit.Framework;
+using __NAME__.IntegrationTests.Infrastructure;
+
+namespace __NAME__.IntegrationTests.PersistenceTests
 {
-    class ExamplePersistenceTester
+    [TestFixture]
+    public class ExamplePersistenceTester : DomainPersistenceTester
     {
+        [Test]
+        public void should_persist_example()
+        {
+            //TODO: Create object and persist.
+        }
     }
 }
