@@ -1,5 +1,7 @@
-﻿using AutoMapper;
+﻿using System.Linq;
+using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Crux.Domain.Entities;
 using Crux.NancyFx.Infrastructure.Extensions;
 using Nancy;
 using Nancy.ModelBinding;
@@ -10,9 +12,9 @@ namespace __NAME__.Api.Modules
 {
     public class ExampleModule : NancyModule
     {
-        public ExampleModule(IRepository repository, IMappingEngine engine)
+        public ExampleModule(IRepositoryOfId<int> repository, IMappingEngine engine)
         {
-            Get["/examples"] = _ => repository.Query<ExampleEntity>().Project().To<ExampleModel>();
+            Get["/examples"] = _ => repository.Query<ExampleEntity>().Project().To<ExampleModel>().ToList();
 
             Get["/example/{id}"] = _ => {
                 var entity = repository.Load<ExampleEntity>(_.id);
