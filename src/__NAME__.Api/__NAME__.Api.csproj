@@ -152,6 +152,7 @@
   <ItemGroup>
     <Compile Include="Diagnostics\CommunicationStatusReporter.cs" />
     <Compile Include="Diagnostics\IReportStatus.cs" />
+    <Compile Include="Diagnostics\PersistanceStatusReporter.cs" />
     <Compile Include="Infrastructure\Bootstrapping\NancyBootstrapper.cs" />
     <Compile Include="Infrastructure\Bootstrapping\Registries\AppRegistry.cs" />
     <Compile Include="Infrastructure\Bootstrapping\Registries\NHibernateRegistry.cs" />
