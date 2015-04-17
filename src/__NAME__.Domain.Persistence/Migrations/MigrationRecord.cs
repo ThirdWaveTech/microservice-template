@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace __NAME__.Domain.Persistence.Migrations
 {
-    class MigrationRecord
+    public class MigrationRecord
     {
+        public virtual long Version { get; set; }
+        public virtual DateTime? AppliedOn { get; set; }
+        public virtual string Description { get; set; }
     }
 }
