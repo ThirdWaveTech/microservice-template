@@ -1,4 +1,5 @@
-﻿using Crux.Domain.Persistence.NHibernate;
+﻿using Crux.Domain.Entities;
+using Crux.Domain.Persistence.NHibernate;
 
 namespace __NAME__.Domain.Persistence
 {

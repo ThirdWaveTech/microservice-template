@@ -88,8 +88,7 @@
     <Reference Include="NServiceBus.Log4Net">
       <HintPath>..\packages\NServiceBus.Log4Net.1.0.0\lib\net45\NServiceBus.Log4Net.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus.ObjectBuilder.StructureMap, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="NServiceBus.ObjectBuilder.StructureMap">
       <HintPath>..\packages\NServiceBus.StructureMap.5.0.1\lib\net45\NServiceBus.ObjectBuilder.StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap, Version=3.1.4.0, Culture=neutral, processorArchitecture=MSIL">
@@ -109,10 +108,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handlers\ForMessages\RegisterClientCommandHandler.cs" />
     <Compile Include="Infrastructure\Bootstrapping\EndpointConfig.cs" />
     <Compile Include="Infrastructure\Bootstrapping\NHibernateRegistry.cs" />
     <Compile Include="Infrastructure\Bootstrapping\ServiceRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\StatusService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -137,7 +138,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Handlers\ForEvents\" />
-    <Folder Include="Handlers\ForMessages\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\__NAME__.Domain.Persistence\__NAME__.Domain.Persistence.csproj">
@@ -151,6 +151,10 @@
     <ProjectReference Include="..\__NAME__.Messages\__NAME__.Messages.csproj">
       <Project>{d1d380b5-f384-4dba-86bf-9ecaea8b6fed}</Project>
       <Name>__NAME__.Messages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\__NAME__.Models\__NAME__.Models.csproj">
+      <Project>{71A42623-F570-45FC-B7CF-B8CF4EBCA747}</Project>
+      <Name>__NAME__.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

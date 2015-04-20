@@ -1,14 +1,15 @@
-﻿using Owin;
-using __NAME__.Api.Infrastructure.Bootstrapping;
+﻿using Microsoft.Owin.Extensions;
+using Owin;
 
 namespace __NAME__.Api
 {
-    //OWIN startup
+    // OWIN startup
     public class Startup
     {
         public void Configuration(IAppBuilder app)
         {
-            Bootstrapper.Bootstrap(app);
+            app.UseNancy();
+            app.UseStageMarker(PipelineStage.MapHandler);
         }
     }
 }

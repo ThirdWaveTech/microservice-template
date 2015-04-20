@@ -64,9 +64,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\__NAME__.Api.Client\__NAME__.Api.Client.csproj">
+      <Project>{362c291f-0977-4329-882c-0562ea5fc5cd}</Project>
+      <Name>__NAME__.Api.Client</Name>
+    </ProjectReference>
     <ProjectReference Include="..\__NAME__.Domain\__NAME__.Domain.csproj">
       <Project>{386b7c40-6861-4e03-b94b-81d624bb4ca6}</Project>
       <Name>__NAME__.Domain</Name>

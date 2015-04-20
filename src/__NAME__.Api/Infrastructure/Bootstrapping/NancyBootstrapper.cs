@@ -1,18 +1,26 @@
 ﻿using System.Linq;
 using AutoMapper;
 using Crux.Core.Bootstrapping;
+using Crux.Domain.UoW;
 using Crux.Logging;
 using Nancy;
 using Nancy.Authentication.Token;
 using Nancy.Bootstrapper;
 using Nancy.Bootstrappers.StructureMap;
+using Nancy.Diagnostics;
 using StructureMap;
 using StructureMap.Graph;
+using __NAME__.Api.Infrastructure.Pipelines;
 
 namespace __NAME__.Api.Infrastructure.Bootstrapping
 {
     public class NancyBootstrapper : StructureMapNancyBootstrapper
     {
+        protected override DiagnosticsConfiguration DiagnosticsConfiguration
+        {
+            get { return new DiagnosticsConfiguration {Password = "1234"}; }
+        }
+
         static NancyBootstrapper()
         {
             InitializeLogging();
@@ -32,11 +40,12 @@ namespace __NAME__.Api.Infrastructure.Bootstrapping
 
         protected override void RequestStartup(IContainer requestContainer, IPipelines pipelines, NancyContext context)
         {
+            // Enable token authentication
             TokenAuthentication.Enable(pipelines, new TokenAuthenticationConfiguration(requestContainer.GetInstance<ITokenizer>()));
 
-//            pipelines.OnError += Crux.NancyFx.Infrastructure.Pipelines;
-//            pipelines.BeforeRequest += Crux.NancyFx.Infrastructure.Pipelines.Pipelines.BeforeEveryRequest(requestContainer);
-//            pipelines.AfterRequest += Crux.NancyFx.Infrastructure.Pipelines.Pipelines.AfterEveryRequest;
+            // Set up unit of work
+            pipelines.BeforeRequest += UnitOfWorkPipeline.BeforeRequest(requestContainer);
+            pipelines.AfterRequest += UnitOfWorkPipeline.AfterRequest();
         }
 
         private static void InitializeLogging()

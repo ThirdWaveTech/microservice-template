@@ -103,6 +103,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Nancy.BootStrappers.StructureMap.1.1\lib\net40\Nancy.Bootstrappers.StructureMap.dll</HintPath>
     </Reference>
+    <Reference Include="Nancy.Hosting.Aspnet">
+      <HintPath>..\packages\Nancy.Hosting.Aspnet.1.1\lib\net40\Nancy.Hosting.Aspnet.dll</HintPath>
+    </Reference>
     <Reference Include="Nancy.Owin">
       <HintPath>..\packages\Nancy.Owin.1.1\lib\net40\Nancy.Owin.dll</HintPath>
       <Private>True</Private>
@@ -132,30 +135,37 @@
     <Reference Include="StructureMap.Net4">
       <HintPath>..\packages\structuremap.3.1.4.143\lib\net40\StructureMap.Net4.dll</HintPath>
     </Reference>
-    <Reference Include="StructureMap.Web">
-      <HintPath>..\packages\structuremap.web.3.1.0.133\lib\net40\StructureMap.Web.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Web" />
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Infrastructure\Bootstrapping\Bootstrapper.cs" />
+    <Compile Include="Diagnostics\CommunicationStatusReporter.cs" />
+    <Compile Include="Diagnostics\IReportStatus.cs" />
+    <Compile Include="Diagnostics\PersistanceStatusReporter.cs" />
     <Compile Include="Infrastructure\Bootstrapping\NancyBootstrapper.cs" />
     <Compile Include="Infrastructure\Bootstrapping\Registries\AppRegistry.cs" />
     <Compile Include="Infrastructure\Bootstrapping\Registries\NHibernateRegistry.cs" />
+    <Compile Include="Infrastructure\Pipelines\UnitOfWorkPipeline.cs" />
+    <Compile Include="Mappings\ExampleMapper.cs" />
+    <Compile Include="Modules\ClientInfoModule.cs" />
+    <Compile Include="Modules\DiagnosticsModule.cs" />
+    <Compile Include="Modules\ExampleModule.cs" />
     <Compile Include="Modules\PingModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Mappings\" />
     <Folder Include="Validation\" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +177,14 @@
       <Project>{386b7c40-6861-4e03-b94b-81d624bb4ca6}</Project>
       <Name>__NAME__.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\__NAME__.MessageBus.Client\__NAME__.MessageBus.Client.csproj">
+      <Project>{bf52672c-cd40-41d7-a4a8-58c978f4cc72}</Project>
+      <Name>__NAME__.MessageBus.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\__NAME__.Models\__NAME__.Models.csproj">
+      <Project>{71a42623-f570-45fc-b7cf-b8cf4ebca747}</Project>
+      <Name>__NAME__.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Config\Prod\ConnectionStrings.config" />
@@ -176,6 +194,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Config\ConnectionStrings.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Config\UnicastBus.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Config\Prod\UnicastBus.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Config\QA\UnicastBus.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
