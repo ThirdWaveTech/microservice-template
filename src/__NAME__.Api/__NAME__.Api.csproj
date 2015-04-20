@@ -48,23 +48,23 @@
       <HintPath>..\packages\AutoMapper.3.3.0\lib\net40\AutoMapper.Net4.dll</HintPath>
     </Reference>
     <Reference Include="Crux.Core">
-      <HintPath>..\packages\Crux.Core.0.1.43\lib\net40\Crux.Core.dll</HintPath>
+      <HintPath>..\packages\Crux.Core.0.1.44\lib\net40\Crux.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Crux.Domain">
-      <HintPath>..\packages\Crux.Domain.0.1.43\lib\net40\Crux.Domain.dll</HintPath>
+      <HintPath>..\packages\Crux.Domain.0.1.44\lib\net40\Crux.Domain.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Crux.Domain.Persistence">
-      <HintPath>..\packages\Crux.Domain.Persistence.0.1.43\lib\net40\Crux.Domain.Persistence.dll</HintPath>
+      <HintPath>..\packages\Crux.Domain.Persistence.0.1.44\lib\net40\Crux.Domain.Persistence.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Crux.Logging">
-      <HintPath>..\packages\Crux.Logging.0.1.43\lib\net40\Crux.Logging.dll</HintPath>
+      <HintPath>..\packages\Crux.Logging.0.1.44\lib\net40\Crux.Logging.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Crux.NancyFx">
-      <HintPath>..\packages\Crux.NancyFx.0.1.43\lib\net40\Crux.NancyFx.dll</HintPath>
+      <HintPath>..\packages\Crux.NancyFx.0.1.44\lib\net40\Crux.NancyFx.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FluentNHibernate">
@@ -74,9 +74,9 @@
     <Reference Include="FluentValidation">
       <HintPath>..\packages\FluentValidation.5.5.0.0\lib\Net40\FluentValidation.dll</HintPath>
     </Reference>
-    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
@@ -90,6 +90,7 @@
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Nancy">
       <HintPath>..\packages\Nancy.1.1\lib\net40\Nancy.dll</HintPath>
@@ -150,22 +151,19 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Diagnostics\CommunicationStatusReporter.cs" />
-    <Compile Include="Diagnostics\IReportStatus.cs" />
-    <Compile Include="Diagnostics\PersistanceStatusReporter.cs" />
     <Compile Include="Infrastructure\Bootstrapping\NancyBootstrapper.cs" />
     <Compile Include="Infrastructure\Bootstrapping\Registries\AppRegistry.cs" />
     <Compile Include="Infrastructure\Bootstrapping\Registries\NHibernateRegistry.cs" />
     <Compile Include="Infrastructure\Pipelines\UnitOfWorkPipeline.cs" />
     <Compile Include="Mappings\ExampleMapper.cs" />
     <Compile Include="Modules\ClientInfoModule.cs" />
-    <Compile Include="Modules\DiagnosticsModule.cs" />
     <Compile Include="Modules\ExampleModule.cs" />
     <Compile Include="Modules\PingModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Diagnostics\" />
     <Folder Include="Validation\" />
   </ItemGroup>
   <ItemGroup>
@@ -176,10 +174,6 @@
     <ProjectReference Include="..\__NAME__.Domain\__NAME__.Domain.csproj">
       <Project>{386b7c40-6861-4e03-b94b-81d624bb4ca6}</Project>
       <Name>__NAME__.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\__NAME__.MessageBus.Client\__NAME__.MessageBus.Client.csproj">
-      <Project>{bf52672c-cd40-41d7-a4a8-58c978f4cc72}</Project>
-      <Name>__NAME__.MessageBus.Client</Name>
     </ProjectReference>
     <ProjectReference Include="..\__NAME__.Models\__NAME__.Models.csproj">
       <Project>{71a42623-f570-45fc-b7cf-b8cf4ebca747}</Project>
@@ -194,21 +188,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Config\ConnectionStrings.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_Data\Config\UnicastBus.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_Data\Config\Prod\UnicastBus.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_Data\Config\QA\UnicastBus.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

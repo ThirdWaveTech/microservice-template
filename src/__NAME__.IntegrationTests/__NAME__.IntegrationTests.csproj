@@ -34,16 +34,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Crux.Core">
-      <HintPath>..\packages\Crux.Core.0.1.43\lib\net40\Crux.Core.dll</HintPath>
+      <HintPath>..\packages\Crux.Core.0.1.44\lib\net40\Crux.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Crux.Domain">
-      <HintPath>..\packages\Crux.Domain.0.1.43\lib\net40\Crux.Domain.dll</HintPath>
+      <HintPath>..\packages\Crux.Domain.0.1.44\lib\net40\Crux.Domain.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Crux.Domain.Persistence">
-      <HintPath>..\packages\Crux.Domain.Persistence.0.1.43\lib\net40\Crux.Domain.Persistence.dll</HintPath>
+      <HintPath>..\packages\Crux.Domain.Persistence.0.1.44\lib\net40\Crux.Domain.Persistence.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Crux.Domain.Testing">
-      <HintPath>..\packages\Crux.Domain.Testing.0.1.43\lib\net40\Crux.Domain.Testing.dll</HintPath>
+      <HintPath>..\packages\Crux.Domain.Testing.0.1.44\lib\net40\Crux.Domain.Testing.dll</HintPath>
     </Reference>
     <Reference Include="FluentAssertions">
       <HintPath>..\packages\FluentAssertions.3.3.0\lib\net45\FluentAssertions.dll</HintPath>
@@ -51,17 +54,22 @@
     <Reference Include="FluentAssertions.Core">
       <HintPath>..\packages\FluentAssertions.3.3.0\lib\net45\FluentAssertions.Core.dll</HintPath>
     </Reference>
-    <Reference Include="FluentNHibernate">
+    <Reference Include="FluentNHibernate, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\FluentNHibernate.2.0.1.0\lib\net40\FluentNHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="Iesi.Collections">
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="NHibernate">
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NHibernate.4.0.3.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
@@ -82,6 +90,7 @@
     <Compile Include="Infrastructure\BaseDomainPersistenceTester.cs" />
     <Compile Include="Infrastructure\BaseStatelessPersistenceTester.cs" />
     <Compile Include="Infrastructure\DefaultCompareConfig.cs" />
+    <Compile Include="Infrastructure\TestConnectionProvider.cs" />
     <Compile Include="Infrastructure\TestSessionFactoryConfig.cs" />
     <Compile Include="Persistence\ExamplePersistenceTester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

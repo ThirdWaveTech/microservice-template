@@ -40,7 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientInfo\RegisterClientModel.cs" />
-    <Compile Include="Diagnostics\StatusItem.cs" />
     <Compile Include="Example\NewExampleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -34,10 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Crux.Core">
-      <HintPath>..\packages\Crux.Core.0.1.43\lib\net40\Crux.Core.dll</HintPath>
+      <HintPath>..\packages\Crux.Core.0.1.44\lib\net40\Crux.Core.dll</HintPath>
     </Reference>
     <Reference Include="Crux.Domain">
-      <HintPath>..\packages\Crux.Domain.0.1.43\lib\net40\Crux.Domain.dll</HintPath>
+      <HintPath>..\packages\Crux.Domain.0.1.44\lib\net40\Crux.Domain.dll</HintPath>
     </Reference>
     <Reference Include="FluentAssertions">
       <HintPath>..\packages\FluentAssertions.3.3.0\lib\net45\FluentAssertions.dll</HintPath>
