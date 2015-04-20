@@ -5,6 +5,7 @@ using __NAME__.Models.Example;
 
 namespace __NAME__.Api.Client.ResourceClients
 {
+    [Headers("Accept: application/json")]
     public interface IExampleClient
     {
         [Get("/examples")]

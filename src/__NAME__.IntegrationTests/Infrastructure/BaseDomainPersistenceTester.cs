@@ -1,4 +1,5 @@
-﻿using NHibernate;
+﻿using Crux.Domain.Persistence;
+using NHibernate;
 
 namespace __NAME__.IntegrationTests.Infrastructure
 {
@@ -6,7 +7,12 @@ namespace __NAME__.IntegrationTests.Infrastructure
     {
         public override ISessionFactory SessionFactory
         {
-            get { return new TestSessionFactoryConfig("__NAME__").CreateSessionFactory(); }
+            get { return new TestSessionFactoryConfig().CreateSessionFactory(); }
+        }
+
+        public override IDbConnectionProvider ConnectionProvider
+        {
+            get { return new TestConnectionProvider("__NAME__"); }
         }
     }
 }

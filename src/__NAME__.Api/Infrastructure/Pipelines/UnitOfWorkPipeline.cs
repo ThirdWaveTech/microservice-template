@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Crux.Core.Extensions;
 using Crux.Domain.Persistence.NHibernate;
 using Crux.Domain.UoW;
-using Crux.NancyFx.Infrastructure.Extensions;
 using Nancy;
 using StructureMap;
 
@@ -21,13 +21,18 @@ namespace __NAME__.Api.Infrastructure.Pipelines
         public static Func<NancyContext, Response> BeforeRequest(IContainer container)
         {
             return ctx => {
-                if (ctx.IsHttpOptions() || ShouldExclude(ctx.Request.Path)) return null;
+                if (IsHttpOptions(ctx) || ShouldExclude(ctx.Request.Path)) return null;
                 
                 var unitOfWork = container.GetInstance<INHibernateUnitOfWork>();
                 ctx.Items[UNIT_OF_WORK_SCOPE] = unitOfWork.CreateTransactionalScope(GetUnitOfWorkOptions(ctx));
 
                 return ctx.Response;
             };
+        }
+
+        private static bool IsHttpOptions(NancyContext ctx)
+        {
+            return ctx.Request.Method.EqualsIgnoreCase("OPTIONS");
         }
 
         public static Action<NancyContext> AfterRequest()

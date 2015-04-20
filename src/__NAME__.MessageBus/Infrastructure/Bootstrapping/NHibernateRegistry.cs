@@ -25,7 +25,7 @@ namespace __NAME__.MessageBus.Infrastructure.Bootstrapping
                 .Use<NHibernateUnitOfWork>();
 
             ForSingletonOf<ISessionFactory>()
-                .Use(c => new SessionFactoryConfig("__NAME__").CreateSessionFactory());
+                .Use(c => new SessionFactoryConfig().CreateSessionFactory());
 
             For<IStatelessSession>()
                 .Use(c => c.GetInstance<ISessionFactory>().OpenStatelessSession());

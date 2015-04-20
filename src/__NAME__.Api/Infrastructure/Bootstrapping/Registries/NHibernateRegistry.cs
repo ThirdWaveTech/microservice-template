@@ -1,9 +1,8 @@
 ﻿using System;
 using Crux.Domain.Entities;
+using Crux.Domain.Persistence;
 using Crux.Domain.Persistence.NHibernate;
-using Crux.Domain.UoW;
 using NHibernate;
-using StructureMap;
 using StructureMap.Configuration.DSL;
 using __NAME__.Domain;
 using __NAME__.Domain.Persistence;
@@ -16,7 +15,11 @@ namespace __NAME__.Api.Infrastructure.Bootstrapping.Registries
         {
             // Session factory
             ForSingletonOf<ISessionFactory>()
-                .Use(c => new SessionFactoryConfig("__NAME__").CreateSessionFactory());
+                .Use(c => new SessionFactoryConfig().CreateSessionFactory());
+
+            // Session factory
+            ForSingletonOf<IDbConnectionProvider>()
+                .Use(c => SqlConnectionProvider.FromConnectionStringKey("__NAME__"));
 
             // Unit of Work
             For<INHibernateUnitOfWork>().Use<NHibernateUnitOfWork>();

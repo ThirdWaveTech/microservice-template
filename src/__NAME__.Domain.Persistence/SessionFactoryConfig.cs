@@ -9,17 +9,10 @@ namespace __NAME__.Domain.Persistence
 {
     public class SessionFactoryConfig
     {
-        private readonly string _connectionStringKey;
-
-        public SessionFactoryConfig(string connectionStringKey)
-        {
-            _connectionStringKey = connectionStringKey;
-        }
-
         protected virtual IPersistenceConfigurer GetDatabaseConfiguration()
         {
             return MsSqlConfiguration.MsSql2012
-                .ConnectionString(b => b.FromConnectionStringWithKey(_connectionStringKey));
+                .ConnectionString(b => b.FromConnectionStringWithKey("__NAME__"));
         }
 
         public virtual ISessionFactory CreateSessionFactory()

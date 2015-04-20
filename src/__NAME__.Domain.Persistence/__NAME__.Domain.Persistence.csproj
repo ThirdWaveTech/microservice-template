@@ -71,6 +71,7 @@
     <Compile Include="ExampleEntityMap.cs" />
     <Compile Include="Migrations\MigrationRecord.cs" />
     <Compile Include="Migrations\MigrationRecordMap.cs" />
+    <Compile Include="Migrations\MigrationsRepository.cs" />
     <Compile Include="NHibernateRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SessionFactoryConfig.cs" />

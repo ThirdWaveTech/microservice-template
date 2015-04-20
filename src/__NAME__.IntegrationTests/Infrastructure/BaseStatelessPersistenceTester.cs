@@ -1,4 +1,5 @@
-﻿using NHibernate;
+﻿using Crux.Domain.Persistence;
+using NHibernate;
 using NUnit.Framework;
 
 namespace __NAME__.IntegrationTests.Infrastructure
@@ -6,18 +7,16 @@ namespace __NAME__.IntegrationTests.Infrastructure
 {
     public abstract class BaseStatelessPersistenceTester
     {
-        private readonly string _connectionString;
-
-        protected BaseStatelessPersistenceTester(string connectionString)
+        protected BaseStatelessPersistenceTester()
         {
-            _connectionString = connectionString;
             StatelessSession = GetStatelessSession();
         }
 
         public IStatelessSession GetStatelessSession()
         {
-            var sessionFactory = new TestSessionFactoryConfig(_connectionString).CreateSessionFactory();
-            return sessionFactory.OpenStatelessSession();
+            var sessionFactory = new TestSessionFactoryConfig().CreateSessionFactory();
+            var connectionProvider = new TestConnectionProvider("__NAME__");
+            return sessionFactory.OpenStatelessSession(connectionProvider.GetConnection());
         }
 
         protected IStatelessSession StatelessSession { get; private set; }
