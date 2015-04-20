@@ -82,16 +82,16 @@ namespace __NAME__.Api.Client.ResourceClients
             return (Task<IEnumerable<ExampleModel>>) methodImpls["List"](Client, arguments);
         }
 
-        public virtual Task<IEnumerable<ExampleModel>> Get(int id)
+        public virtual Task<ExampleModel> Get(int id)
         {
             var arguments = new object[] { id };
-            return (Task<IEnumerable<ExampleModel>>) methodImpls["Get"](Client, arguments);
+            return (Task<ExampleModel>) methodImpls["Get"](Client, arguments);
         }
 
-        public virtual Task Create(NewExampleModel model)
+        public virtual Task<NewExampleCreatedModel> Create(NewExampleModel model)
         {
             var arguments = new object[] { model };
-            return (Task) methodImpls["Create"](Client, arguments);
+            return (Task<NewExampleCreatedModel>) methodImpls["Create"](Client, arguments);
         }
 
         public virtual Task Close(CloseExampleModel model)

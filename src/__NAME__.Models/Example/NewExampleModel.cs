@@ -14,6 +14,11 @@
         public string Name { get; set; }
     }
 
+    public class NewExampleCreatedModel
+    {
+        public int Id { get; set; }
+    }
+
     public class CloseExampleModel
     {
         public int Id { get; set; }

@@ -11,16 +11,16 @@ namespace __NAME__.Api.Client.ResourceClients
         [Get("/examples")]
         Task<IEnumerable<ExampleModel>> List();
 
-        [Get("/examples/{id}")]
-        Task<IEnumerable<ExampleModel>> Get(int id);
+        [Get("/example/{id}")]
+        Task<ExampleModel> Get(int id);
 
         [Post("/examples")]
-        Task Create(NewExampleModel model);
+        Task<NewExampleCreatedModel> Create([Body] NewExampleModel model);
 
         [Post("/examples/close")]
-        Task Close(CloseExampleModel model);
+        Task Close([Body] CloseExampleModel model);
 
-        [Delete("/examples/{id}")]
+        [Delete("/example/{id}")]
         Task Delete(int id);
     }
 }

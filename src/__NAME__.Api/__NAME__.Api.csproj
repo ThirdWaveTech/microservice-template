@@ -127,6 +127,14 @@
       <HintPath>..\packages\NHibernate.4.0.3.4000\lib\net40\NHibernate.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus.5.2.0\lib\net45\NServiceBus.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.ObjectBuilder.StructureMap, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus.StructureMap.5.0.1\lib\net45\NServiceBus.ObjectBuilder.StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
@@ -160,6 +168,7 @@
     <Compile Include="Infrastructure\Pipelines\UnitOfWorkPipeline.cs" />
     <Compile Include="Mappings\ExampleMapper.cs" />
     <Compile Include="Modules\ClientInfoModule.cs" />
+    <Compile Include="Modules\DiagnosticsModule.cs" />
     <Compile Include="Modules\ExampleModule.cs" />
     <Compile Include="Modules\PingModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -189,6 +198,10 @@
     <ProjectReference Include="..\__NAME__.MessageBus.Client\__NAME__.MessageBus.Client.csproj">
       <Project>{bf52672c-cd40-41d7-a4a8-58c978f4cc72}</Project>
       <Name>__NAME__.MessageBus.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\__NAME__.Messages\__NAME__.Messages.csproj">
+      <Project>{d1d380b5-f384-4dba-86bf-9ecaea8b6fed}</Project>
+      <Name>__NAME__.Messages</Name>
     </ProjectReference>
     <ProjectReference Include="..\__NAME__.Models\__NAME__.Models.csproj">
       <Project>{71a42623-f570-45fc-b7cf-b8cf4ebca747}</Project>

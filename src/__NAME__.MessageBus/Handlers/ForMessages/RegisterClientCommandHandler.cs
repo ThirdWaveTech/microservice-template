@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NServiceBus;
+﻿using NServiceBus;
 using StructureMap;
 using __NAME__.MessageBus.Services;
 using __NAME__.Messages.Commands;

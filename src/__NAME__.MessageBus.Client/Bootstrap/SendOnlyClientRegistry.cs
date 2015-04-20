@@ -7,7 +7,7 @@ namespace __NAME__.MessageBus.Client.Bootstrap
 {
     public class SendOnlyClientRegistry: Registry
     {
-        public SendOnlyClientRegistry()
+        public SendOnlyClientRegistry() 
         {
             //NServiceBus.Logging.LogManager.Use<Log4NetFactory>();
 
@@ -15,10 +15,12 @@ namespace __NAME__.MessageBus.Client.Bootstrap
 
             configuration.UseContainer<StructureMapBuilder>(c => c.ExistingContainer(ObjectFactory.Container));
             //configuration.AssembliesToScan(new Assembly[] { typeof(RegisterClientCommand).Assembly });
+            
             ConventionsBuilder conventions = configuration.Conventions();
             conventions.DefiningCommandsAs(t => t.Namespace != null && t.Namespace.StartsWith("__NAME__") && t.Namespace.EndsWith("Commands"));
             conventions.DefiningEventsAs(t => t.Namespace != null && t.Namespace.StartsWith("__NAME__") && t.Namespace.EndsWith("Events"));
             conventions.DefiningMessagesAs(t => t.Namespace != null && t.Namespace.StartsWith("__NAME__") && t.Namespace.EndsWith("Messages"));
+
             configuration.UseSerialization<JsonSerializer>();
             configuration.UsePersistence<InMemoryPersistence>();
             configuration.DisableFeature<Sagas>();
@@ -27,7 +29,6 @@ namespace __NAME__.MessageBus.Client.Bootstrap
             var bus = Bus.CreateSendOnly(configuration);
 
             ForSingletonOf<ISendOnlyBus>().Use(bus);
-
             ForSingletonOf<Sender>().Use(new Sender(bus));
         }
     }
