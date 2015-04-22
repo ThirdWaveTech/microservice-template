@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Crux.Domain.Persistence.NHibernate;
+﻿using Crux.Domain.Persistence.NHibernate;
 using NHibernate;
 
 namespace __NAME__.Domain.Persistence.Migrations
@@ -16,7 +11,7 @@ namespace __NAME__.Domain.Persistence.Migrations
         {
             get
             {
-                return this._unitOfWork.CurrentSession;
+                return _unitOfWork.CurrentSession;
             }
         }
         public MigrationsRepository(INHibernateUnitOfWork unitOfWork)

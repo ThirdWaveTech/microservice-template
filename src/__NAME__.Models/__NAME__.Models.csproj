@@ -39,8 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientInfo\RegisterClientModel.cs" />
     <Compile Include="Diagnostics\StatusItem.cs" />
+    <Compile Include="Example\CloseExampleModel.cs" />
+    <Compile Include="Example\ExampleModel.cs" />
     <Compile Include="Example\NewExampleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

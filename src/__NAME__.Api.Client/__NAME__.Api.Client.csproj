@@ -62,11 +62,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bootstrap\__NAME__ApiClientRegistry.cs" />
+    <Compile Include="ApiClientBootstrapper.cs" />
     <Compile Include="RefitStubs.cs" />
-    <Compile Include="ResourceClients\IApiInfoClient.cs" />
-    <Compile Include="ResourceClients\IExampleClient.cs" />
-    <Compile Include="__NAME__ClientFactory.cs" />
+    <Compile Include="IDiagnosticsClient.cs" />
+    <Compile Include="IExampleClient.cs" />
+    <Compile Include="ApiClientFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

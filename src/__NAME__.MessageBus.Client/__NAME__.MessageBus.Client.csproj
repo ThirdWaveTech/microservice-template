@@ -60,8 +60,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bootstrap\SendOnlyClientRegistry.cs" />
-    <Compile Include="Sender.cs" />
+    <Compile Include="DiagnosticsSender.cs" />
+    <Compile Include="MessageBusClientBootstrapper.cs" />
+    <Compile Include="ExampleSender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

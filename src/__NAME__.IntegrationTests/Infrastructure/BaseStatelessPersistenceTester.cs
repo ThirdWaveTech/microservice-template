@@ -1,5 +1,4 @@
-﻿using Crux.Domain.Persistence;
-using NHibernate;
+﻿using NHibernate;
 using NUnit.Framework;
 
 namespace __NAME__.IntegrationTests.Infrastructure

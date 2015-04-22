@@ -7,6 +7,7 @@ using NServiceBus.Features;
 using NServiceBus.Log4Net;
 using StructureMap;
 using StructureMap.Graph;
+using __NAME__.Messages;
 
 namespace __NAME__.MessageBus.Infrastructure.Bootstrapping
 {
@@ -48,9 +49,9 @@ namespace __NAME__.MessageBus.Infrastructure.Bootstrapping
 
             //Define conventions
             ConventionsBuilder conventions = config.Conventions();
-            conventions.DefiningCommandsAs(t => t.Namespace != null && t.Namespace.StartsWith("__NAME__") && t.Namespace.EndsWith("Commands"));
-            conventions.DefiningEventsAs(t => t.Namespace != null && t.Namespace.StartsWith("__NAME__") && t.Namespace.EndsWith("Events"));
-            conventions.DefiningMessagesAs(t => t.Namespace != null && t.Namespace.StartsWith("__NAME__") && t.Namespace.EndsWith("Messages"));
+            conventions.DefiningCommandsAs(MessageTypeConventions.EndsWith("Command"));
+            conventions.DefiningEventsAs(MessageTypeConventions.EndsWith("Event"));
+            conventions.DefiningMessagesAs(MessageTypeConventions.EndsWith("Message"));
 
             // Keep it simple by default
             config.DisableFeature<SecondLevelRetries>();

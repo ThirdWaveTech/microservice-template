@@ -108,14 +108,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Handlers\ForMessages\CloseExampleHandler.cs" />
-    <Compile Include="Handlers\ForMessages\RegisterClientCommandHandler.cs" />
+    <Compile Include="Infrastructure\Diagnostics\PingHandler.cs" />
+    <Compile Include="App\Examples\CloseExampleHandler.cs" />
     <Compile Include="Infrastructure\Bootstrapping\EndpointConfig.cs" />
     <Compile Include="Infrastructure\Bootstrapping\NHibernateRegistry.cs" />
     <Compile Include="Infrastructure\Bootstrapping\ServiceRegistry.cs" />
     <Compile Include="Infrastructure\UnitOfWorkManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\StatusService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -138,9 +137,7 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Handlers\ForEvents\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\__NAME__.Domain.Persistence\__NAME__.Domain.Persistence.csproj">
       <Project>{e444ff50-c834-44a0-b97e-657beb5affc8}</Project>

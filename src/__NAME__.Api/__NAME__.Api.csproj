@@ -159,24 +159,22 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Diagnostics\CommunicationStatusReporter.cs" />
-    <Compile Include="Diagnostics\IReportStatus.cs" />
-    <Compile Include="Diagnostics\PersistanceStatusReporter.cs" />
+    <Compile Include="App\Example\ExampleValidator.cs" />
     <Compile Include="Infrastructure\Bootstrapping\NancyBootstrapper.cs" />
     <Compile Include="Infrastructure\Bootstrapping\Registries\AppRegistry.cs" />
     <Compile Include="Infrastructure\Bootstrapping\Registries\NHibernateRegistry.cs" />
+    <Compile Include="Infrastructure\Diagnostics\MessageBusPingReporter.cs" />
+    <Compile Include="Infrastructure\Diagnostics\IReportStatus.cs" />
+    <Compile Include="Infrastructure\Diagnostics\PersistenceStatusReporter.cs" />
     <Compile Include="Infrastructure\Pipelines\UnitOfWorkPipeline.cs" />
-    <Compile Include="Mappings\ExampleMapper.cs" />
-    <Compile Include="Modules\ClientInfoModule.cs" />
-    <Compile Include="Modules\DiagnosticsModule.cs" />
-    <Compile Include="Modules\ExampleModule.cs" />
-    <Compile Include="Modules\PingModule.cs" />
+    <Compile Include="App\Example\ExampleMapper.cs" />
+    <Compile Include="Infrastructure\Diagnostics\DiagnosticsModule.cs" />
+    <Compile Include="App\Example\ExampleModule.cs" />
+    <Compile Include="Infrastructure\Diagnostics\PingModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Validation\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="App_Data\Config\Prod\ConnectionStrings.config" />
   </ItemGroup>
@@ -207,6 +205,11 @@
       <Project>{71a42623-f570-45fc-b7cf-b8cf4ebca747}</Project>
       <Name>__NAME__.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Config\Prod\UnicastBus.config" />
+    <Content Include="App_Data\Config\QA\UnicastBus.config" />
+    <Content Include="App_Data\Config\UnicastBus.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

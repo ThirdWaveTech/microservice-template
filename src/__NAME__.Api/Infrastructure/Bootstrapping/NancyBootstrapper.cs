@@ -7,8 +7,6 @@ using Nancy.Authentication.Token;
 using Nancy.Bootstrapper;
 using Nancy.Bootstrappers.StructureMap;
 using Nancy.Diagnostics;
-using NServiceBus;
-using NServiceBus.Features;
 using StructureMap;
 using StructureMap.Graph;
 using __NAME__.Api.Infrastructure.Pipelines;
@@ -36,33 +34,9 @@ namespace __NAME__.Api.Infrastructure.Bootstrapping
                 s.LookForRegistries();
             }));
 
-            InitializeNServiceBus(existingContainer);
+            MessageBusClientBootstrapper.Bootstrap(existingContainer);
 
             InitializeStartupRunners(existingContainer);
-        }
-
-        private void InitializeNServiceBus(IContainer existingContainer)
-        {
-            var configuration = new BusConfiguration();
-
-            configuration.UseContainer<StructureMapBuilder>(c => c.ExistingContainer(existingContainer));
-
-            var conventions = configuration.Conventions();
-            conventions.DefiningCommandsAs(t => t.Namespace != null && t.Namespace.StartsWith("__NAME__") && t.Namespace.EndsWith("Commands"));
-            conventions.DefiningEventsAs(t => t.Namespace != null && t.Namespace.StartsWith("__NAME__") && t.Namespace.EndsWith("Events"));
-            conventions.DefiningMessagesAs(t => t.Namespace != null && t.Namespace.StartsWith("__NAME__") && t.Namespace.EndsWith("Messages"));
-
-            configuration.UseSerialization<JsonSerializer>();
-            configuration.UsePersistence<InMemoryPersistence>();
-            configuration.DisableFeature<Sagas>();
-            configuration.DisableFeature<MessageDrivenSubscriptions>();
-            configuration.DisableFeature<TimeoutManager>();
-            var bus = Bus.CreateSendOnly(configuration);
-
-            existingContainer.Configure(c => {
-                c.ForSingletonOf<ISendOnlyBus>().Use(bus);
-                c.ForSingletonOf<Sender>().Use(new Sender(bus));
-            });
         }
 
         protected override void RequestStartup(IContainer requestContainer, IPipelines pipelines, NancyContext context)
@@ -73,6 +47,9 @@ namespace __NAME__.Api.Infrastructure.Bootstrapping
             // Set up unit of work
             pipelines.BeforeRequest += UnitOfWorkPipeline.BeforeRequest(requestContainer);
             pipelines.AfterRequest += UnitOfWorkPipeline.AfterRequest();
+
+            // Set up validation exception handling
+            pipelines.OnError += Crux.NancyFx.Infrastructure.Pipelines.Pipelines.OnHttpBadRequest;
         }
 
         private static void InitializeLogging()

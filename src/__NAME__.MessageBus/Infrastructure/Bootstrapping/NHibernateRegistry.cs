@@ -2,9 +2,7 @@
 using Crux.Domain.Entities;
 using Crux.Domain.Persistence;
 using Crux.Domain.Persistence.NHibernate;
-using Crux.Domain.UoW;
 using NHibernate;
-using NServiceBus.UnitOfWork;
 using StructureMap.Configuration.DSL;
 using __NAME__.Domain;
 using __NAME__.Domain.Persistence;
