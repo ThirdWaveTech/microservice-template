@@ -123,9 +123,11 @@ If you are looking for professional consulting services to help you build your s
 
 Describe this service.
 
-## Getting Started
+## Prerequisites
 
-Make sure you have [Ruby 2.1](https://github.com/scardetto/physique/blob/master/RUBY_SETUP.md) or later installed.
+* [Ruby 2.1](https://github.com/scardetto/physique/blob/master/RUBY_SETUP.md) or later.
+* Microsoft SQL Server or SQL Server Express Edition.
+* IIS (not Express)
 
 ## Building the Solution
 

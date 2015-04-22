@@ -54,8 +54,19 @@ Physique::Solution.new do |s|
 end
 
 # Acceptance testing task
+desc 'Run acceptance tests'
 test_runner :acceptance do |t|
   t.files = FileList["**/*.AcceptanceTests/bin/Release/*.AcceptanceTests.dll"]
   t.exe = 'src/packages/NUnit.Runners.2.6.3/tools/nunit-console.exe'
   %w(/labels /trace=Verbose).each { |p| t.parameters.add p }
+end
+
+self.extend Physique::DSL
+
+# Acceptance testing task
+desc 'Create SQL login for IIS app pool'
+sqlcmd :init_app_pool_login do |c|
+  c.server_name = ENV['DATABASE_SERVER'] || 'localhost'
+  c.database_name = ENV['DATABASE_NAME'] || '__NAME__'
+  c.file = 'init_app_pool_login.sql'
 end
