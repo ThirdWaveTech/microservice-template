@@ -14,6 +14,7 @@ namespace __NAME__.Domain.Persistence.Migrations
                 return _unitOfWork.CurrentSession;
             }
         }
+
         public MigrationsRepository(INHibernateUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;

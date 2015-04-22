@@ -2,7 +2,6 @@
 using NUnit.Framework;
 
 namespace __NAME__.IntegrationTests.Infrastructure
-
 {
     public abstract class BaseStatelessPersistenceTester
     {

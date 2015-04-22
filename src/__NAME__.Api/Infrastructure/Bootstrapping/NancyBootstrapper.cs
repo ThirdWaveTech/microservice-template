@@ -28,14 +28,17 @@ namespace __NAME__.Api.Infrastructure.Bootstrapping
 
         protected override void ConfigureApplicationContainer(IContainer existingContainer)
         {
+            // Setup container
             existingContainer.Configure(c => c.Scan(s => {
                 s.TheCallingAssembly();
                 s.WithDefaultConventions();
                 s.LookForRegistries();
             }));
 
+            // Setup MessageBus Client
             MessageBusClientBootstrapper.Bootstrap(existingContainer);
 
+            // Initialize all IRunAtStartup classes
             InitializeStartupRunners(existingContainer);
         }
 
