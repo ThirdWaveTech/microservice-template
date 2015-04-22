@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="ConventionExtensions.cs" />
     <Compile Include="Diagnostics\PingCommand.cs" />
-    <Compile Include="Example\CloseExampleCommand.cs" />
+    <Compile Include="Examples\CloseExampleCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

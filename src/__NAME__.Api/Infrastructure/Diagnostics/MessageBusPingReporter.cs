@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using StructureMap;
-using __NAME__.MessageBus.Client;
+using __NAME__.MessageBus.Client.Diagnostics;
 using __NAME__.Models.Diagnostics;
 
 namespace __NAME__.Api.Infrastructure.Diagnostics

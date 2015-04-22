@@ -1,6 +1,6 @@
 ﻿using FluentNHibernate.Mapping;
 
-namespace __NAME__.Domain.Persistence.Migrations
+namespace __NAME__.Domain.Persistence.Diagnostics
 {
     class MigrationRecordMap: ClassMap<MigrationRecord>
     {

@@ -40,9 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Diagnostics\StatusItem.cs" />
-    <Compile Include="Example\CloseExampleModel.cs" />
-    <Compile Include="Example\ExampleModel.cs" />
-    <Compile Include="Example\NewExampleModel.cs" />
+    <Compile Include="Examples\CloseExampleModel.cs" />
+    <Compile Include="Examples\ExampleModel.cs" />
+    <Compile Include="Examples\NewExampleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,7 @@
 ﻿using NServiceBus;
 using __NAME__.Domain;
-using __NAME__.Messages.Example;
+using __NAME__.Domain.Examples;
+using __NAME__.Messages.Examples;
 
 namespace __NAME__.MessageBus.App.Examples
 {

@@ -1,9 +1,9 @@
 ﻿using System;
 using FluentAssertions;
 using NUnit.Framework;
-using __NAME__.Domain;
+using __NAME__.Domain.Examples;
 
-namespace __NAME__.UnitTests.Domain
+namespace __NAME__.UnitTests.Domain.Examples
 {
     [TestFixture]
     public class ExampleEntityTester

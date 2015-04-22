@@ -55,7 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Defaults.cs" />
-    <Compile Include="ExampleEntity.cs" />
+    <Compile Include="Examples\ExampleEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,9 @@
 require 'physique'
 
+# Reports version information about the build to TeamCity. If you are not 
+# using TeamCity, you should delete this line.
+require 'albacore/ext/teamcity' 
+
 Physique::Solution.new do |s|
   s.file = 'src/__NAME__.sln'
 
@@ -8,12 +12,15 @@ Physique::Solution.new do |s|
     t.files = FileList["**/*Tests/bin/Release/*Tests.dll"].exclude(/AcceptanceTests.dll$/)
   end
 
+  # Sets up the FluentMigrator workflow tasks for your database project.
   s.database do |db|
     db.instance = ENV['DATABASE_SERVER'] || 'localhost'
     db.name = ENV['DATABASE_NAME'] || '__NAME__'
     db.project = '__NAME__.Database'
   end
 
+  # Publish the Api, MessageBus, and Database projects to Octopus Deploy.  If 
+  # you are not using Octopus Deploy you should delete this section.
   s.octopus_deploy do |octo|
     octo.server = 'http://build/nuget/packages'
     octo.api_key = ENV['OCTOPUS_API_KEY']
@@ -53,8 +60,11 @@ Physique::Solution.new do |s|
   end
 end
 
-# Acceptance testing task
-desc 'Run acceptance tests'
+desc 'Runs the continuous integration build'
+task :ci => [:versionizer, :test] # Add any steps you want included in your CI 
+                                  # build here.
+
+desc 'Runs the acceptance tests'
 test_runner :acceptance do |t|
   t.files = FileList["**/*.AcceptanceTests/bin/Release/*.AcceptanceTests.dll"]
   t.exe = 'src/packages/NUnit.Runners.2.6.3/tools/nunit-console.exe'
@@ -63,7 +73,6 @@ end
 
 self.extend Physique::DSL
 
-# Acceptance testing task
 desc 'Create SQL login for IIS app pool'
 sqlcmd :init_app_pool_login do |c|
   c.server_name = ENV['DATABASE_SERVER'] || 'localhost'

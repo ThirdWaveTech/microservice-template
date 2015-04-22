@@ -61,9 +61,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DiagnosticsSender.cs" />
+    <Compile Include="Diagnostics\DiagnosticsSender.cs" />
     <Compile Include="MessageBusClientBootstrapper.cs" />
-    <Compile Include="ExampleSender.cs" />
+    <Compile Include="Examples\ExampleSender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

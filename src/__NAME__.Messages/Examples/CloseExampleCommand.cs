@@ -1,4 +1,4 @@
-﻿namespace __NAME__.Messages.Example
+﻿namespace __NAME__.Messages.Examples
 {
     public class CloseExampleCommand
     {

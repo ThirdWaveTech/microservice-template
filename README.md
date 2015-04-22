@@ -34,7 +34,7 @@ To use WarmuP, you will need to install some prerequisites:
 
 ### Generating the Solution
 
-* Open a command prompt and `cd` into the directory where you want to create the solution.
+* Open a command prompt and `cd` into the directory where you want to create the new repository.
 * Using an administrative command prompt, type the following:
 
     ```
@@ -92,15 +92,39 @@ A library containing the strongly-typed model objects used by the API.
 
 A library containing the messages that will be consumed and published by the message bus.
 
+### Unit Test Assemblies
+
+The solution contiains three NUnit assemblies:
+
+#### \_\_NAME\_\_.UnitTests
+
+For unit tests, unsurprisingly.
+
+#### \_\_NAME\_\_.IntegrationTests
+
+For integration tests that talk to a database, an external API, or any other external component.
+
+#### \_\_NAME\_\_.AcceptanceTests
+
+For acceptance tests that communicate with the service layer via it's public interface.  These tests are not run when invoking the default `test` task. Instead you run them via:
+
+```
+$ bundle exec rake acceptance
+```
+
 ### Build and Deployment Support
 
 The `rake` tasks provided by Physique allow you to easily create a continuous integration build for the solution on your favorite CI server.
 
 The build scripts are also pre-configured to package and publish the applications to [Octopus Deploy](https://octopusdeploy.com).  If you are not using Octopus to deploy your apps, you can simply remove that configuration from your `Rakefile`.
 
+### Example Use Cases
+
+The template comes with an ExampleEntity domain entity which is manipulated by different parts of the service.  This entity is provided for illustrative purposes only and you may delete them at any time.
+
 ## Known Issues
 
-There is an issue in the database drop script when providing a dotted replacement token. (i.e. "MyCompany.MyService"). SQLCMD.exe which runs the scripts, doesn't like dotted parameters.  If you use a dotted name, remember to remove the dots in the database name in the generated connection strings and Rakefile.
+There is an issue in the database drop, create, and seed scripts when providing a dotted replacement token (i.e. "MyCompany.MyService"). SQLCMD.exe, which runs the scripts, doesn't like dotted parameters.  If you use a dotted name, remember to remove the dots in the database name in the generated connection strings and Rakefile.
 
 ## Support
 
@@ -139,12 +163,6 @@ $ bundle install         # This will install the gems required for the build.
 $ bundle exec rake test  # This will build the solution and run all of the unit and integration tests.
 ```
 
-This solution also includes a suite of acceptance tests that perform black-box testing against the service interface.  The easiest way to run the acceptance tests is to run the solution in the Visual Studio debugger and the type the following:
-
-```
-$ bundle exec rake acceptance
-```
-
 ## Building the Database
 
 To rebuild the database locally using the migrations, run the following from the command-prompt:
@@ -153,7 +171,23 @@ To rebuild the database locally using the migrations, run the following from the
 $ bundle exec db:rebuild
 ```
 
-For more information about working with databases, check out this [handy guide](https://github.com/scardetto/physique/blob/master/FLUENT_MIGRATOR.md).
+This solution uses Physique and FluentMigrator to create and run database migrations locally, on the continuous integration server and during deployments. The __NAME__.Database project contains the migrations which are used to build and share database changes across the team. For more information on how to use Physique and FluentMigrator, refer to [this guide](https://github.com/scardetto/physique/blob/master/FLUENT_MIGRATOR.md).
+
+## Running the Acceptance Tests
+
+This solution also includes a suite of acceptance tests that perform black-box testing against the service interface.
+
+However, before running the acceptance suite, we must first ensure that the IIS Application Pool's identity can access your local SQL server.  By default, the app pools are configured to run as `IIS APPPOOL\DefaultAppPool`.  The following script will create a login for that user and grant them access to your local database.
+
+```
+$ bundle exec rake init_app_pool_login
+```
+
+With that out of the way, the easiest way to run the acceptance tests is to run the solution in the Visual Studio debugger and the type the following:
+
+```
+$ bundle exec rake acceptance
+```
 
 ## Other Build Tasks
 

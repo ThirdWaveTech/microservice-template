@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 using StructureMap.Configuration.DSL;
 using StructureMap.Graph;
 using __NAME__.Api.Infrastructure.Diagnostics;
-using __NAME__.MessageBus.Client;
+using __NAME__.MessageBus.Client.Diagnostics;
 
 namespace __NAME__.Api.Infrastructure.Bootstrapping.Registries
 {

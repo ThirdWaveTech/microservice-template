@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Migrations\20150412194400_ExampleEntity.cs" />
+    <Compile Include="Examples\20150412194400_ExampleEntity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -55,7 +55,9 @@
     </Content>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="_Scripts\seed.sql" />
     <Content Include="_Scripts\drop.sql" />

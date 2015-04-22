@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Refit;
 using __NAME__.Models.Diagnostics;
-using __NAME__.Models.Example;
+using __NAME__.Models.Examples;
 
 /* ******** Hey You! *********
  *
@@ -29,7 +29,7 @@ namespace RefitInternalGenerated
     }
 }
 
-namespace __NAME__.Api.Client
+namespace __NAME__.Api.Client.Diagnostics
 {
     using RefitInternalGenerated;
 
@@ -60,7 +60,7 @@ namespace __NAME__.Api.Client
     }
 }
 
-namespace __NAME__.Api.Client
+namespace __NAME__.Api.Client.Examples
 {
     using RefitInternalGenerated;
 

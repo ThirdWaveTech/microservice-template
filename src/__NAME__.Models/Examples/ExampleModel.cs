@@ -1,4 +1,4 @@
-﻿namespace __NAME__.Models.Example
+﻿namespace __NAME__.Models.Examples
 {
     public class ExampleModel
     {

@@ -1,6 +1,6 @@
 ﻿using Crux.Domain.Component;
 
-namespace __NAME__.Domain
+namespace __NAME__.Domain.Examples
 {
     public enum ExampleStatus
     {

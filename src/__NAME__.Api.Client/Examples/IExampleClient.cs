@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Refit;
-using __NAME__.Models.Example;
+using __NAME__.Models.Examples;
 
-namespace __NAME__.Api.Client
+namespace __NAME__.Api.Client.Examples
 {
     /// <summary>
     /// This is a sample interface to the Api built using Restfit.  This file 

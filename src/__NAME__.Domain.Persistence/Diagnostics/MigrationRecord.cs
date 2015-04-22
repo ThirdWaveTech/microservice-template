@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace __NAME__.Domain.Persistence.Migrations
+namespace __NAME__.Domain.Persistence.Diagnostics
 {
     public class MigrationRecord
     {

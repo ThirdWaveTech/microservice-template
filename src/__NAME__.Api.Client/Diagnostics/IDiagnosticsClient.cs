@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Refit;
 using __NAME__.Models.Diagnostics;
 
-namespace __NAME__.Api.Client
+namespace __NAME__.Api.Client.Diagnostics
 {
     /****
      * Group functionality in the API via interfaces. All maintenance and info related 

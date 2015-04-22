@@ -4,10 +4,9 @@ using AutoMapper.QueryableExtensions;
 using Crux.Domain.Entities;
 using Crux.NancyFx.Infrastructure.Extensions;
 using Nancy;
-using __NAME__.Domain;
-using __NAME__.MessageBus.Client;
-using __NAME__.Messages.Example;
-using __NAME__.Models.Example;
+using __NAME__.Domain.Examples;
+using __NAME__.MessageBus.Client.Examples;
+using __NAME__.Models.Examples;
 
 namespace __NAME__.Api.App.Example
 {

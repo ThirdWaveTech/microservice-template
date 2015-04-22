@@ -1,7 +1,7 @@
 ﻿using NServiceBus;
-using __NAME__.Messages.Example;
+using __NAME__.Messages.Examples;
 
-namespace __NAME__.MessageBus.Client
+namespace __NAME__.MessageBus.Client.Examples
 {
     public class ExampleSender
     {

@@ -1,7 +1,7 @@
 ﻿using NServiceBus;
 using __NAME__.Messages.Diagnostics;
 
-namespace __NAME__.MessageBus.Client
+namespace __NAME__.MessageBus.Client.Diagnostics
 {
     public class DiagnosticsSender
     {

@@ -1,4 +1,6 @@
 ﻿using StructureMap;
+using __NAME__.Api.Client.Diagnostics;
+using __NAME__.Api.Client.Examples;
 
 namespace __NAME__.Api.Client
 {

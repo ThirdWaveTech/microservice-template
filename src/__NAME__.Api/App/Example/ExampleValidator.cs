@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using __NAME__.Models.Example;
+using __NAME__.Models.Examples;
 
 namespace __NAME__.Api.App.Example
 {

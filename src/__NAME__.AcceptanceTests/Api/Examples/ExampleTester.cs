@@ -8,9 +8,10 @@ using FluentAssertions;
 using NUnit.Framework;
 using Refit;
 using __NAME__.Api.Client;
-using __NAME__.Models.Example;
+using __NAME__.Api.Client.Examples;
+using __NAME__.Models.Examples;
 
-namespace __NAME__.AcceptanceTests.Api
+namespace __NAME__.AcceptanceTests.Api.Examples
 {
     [TestFixture]
     public class ExampleTester

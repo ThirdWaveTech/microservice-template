@@ -1,7 +1,7 @@
 ﻿using Crux.Domain.Persistence.NHibernate;
 using NHibernate;
 
-namespace __NAME__.Domain.Persistence.Migrations
+namespace __NAME__.Domain.Persistence.Diagnostics
 {
     public class MigrationsRepository
     {

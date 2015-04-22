@@ -61,11 +61,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\DiagnosticsTester.cs" />
-    <Compile Include="Api\ExampleTester.cs" />
+    <Compile Include="Api\Diagnostics\DiagnosticsTester.cs" />
+    <Compile Include="Api\Examples\ExampleTester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RefitStubs.cs" />
-    <Compile Include="TaskExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Crux.Domain.Persistence.NHibernate;
-using __NAME__.Domain.Persistence.Migrations;
+using __NAME__.Domain.Persistence.Diagnostics;
 using __NAME__.Models.Diagnostics;
 
 namespace __NAME__.Api.Infrastructure.Diagnostics

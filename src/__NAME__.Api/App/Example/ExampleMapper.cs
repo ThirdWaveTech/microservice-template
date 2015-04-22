@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Crux.Core.Bootstrapping;
-using __NAME__.Domain;
-using __NAME__.Models.Example;
+using __NAME__.Domain.Examples;
+using __NAME__.Models.Examples;
 
 namespace __NAME__.Api.App.Example
 {

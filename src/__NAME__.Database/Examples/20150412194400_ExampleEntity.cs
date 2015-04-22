@@ -1,6 +1,6 @@
 using FluentMigrator;
 
-namespace __NAME__.Database.Migrations
+namespace __NAME__.Database.Examples
 {
     [Migration(20150412194400, "Create ExampleEntities table")]
     public class ExampleEntity : Migration

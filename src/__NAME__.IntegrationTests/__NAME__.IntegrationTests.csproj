@@ -94,7 +94,7 @@
     <Compile Include="Infrastructure\DefaultCompareConfig.cs" />
     <Compile Include="Infrastructure\TestConnectionProvider.cs" />
     <Compile Include="Infrastructure\TestSessionFactoryConfig.cs" />
-    <Compile Include="Persistence\ExamplePersistenceTester.cs" />
+    <Compile Include="Persistence\Examples\ExamplePersistenceTester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

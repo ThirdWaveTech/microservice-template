@@ -1,8 +1,8 @@
 ﻿using FluentAssertions;
-using __NAME__.Domain;
+using __NAME__.Domain.Examples;
 using __NAME__.IntegrationTests.Infrastructure;
 
-namespace __NAME__.IntegrationTests.Persistence
+namespace __NAME__.IntegrationTests.Persistence.Examples
 {
     public class ExamplePersistenceTester : DomainPersistenceTester
     {

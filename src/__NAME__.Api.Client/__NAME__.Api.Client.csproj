@@ -65,8 +65,8 @@
   <ItemGroup>
     <Compile Include="ApiClientBootstrapper.cs" />
     <Compile Include="RefitStubs.cs" />
-    <Compile Include="IDiagnosticsClient.cs" />
-    <Compile Include="IExampleClient.cs" />
+    <Compile Include="Diagnostics\IDiagnosticsClient.cs" />
+    <Compile Include="Examples\IExampleClient.cs" />
     <Compile Include="ApiClientFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

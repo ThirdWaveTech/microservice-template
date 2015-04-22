@@ -2,8 +2,9 @@
 using FluentAssertions;
 using NUnit.Framework;
 using __NAME__.Api.Client;
+using __NAME__.Api.Client.Diagnostics;
 
-namespace __NAME__.AcceptanceTests.Api
+namespace __NAME__.AcceptanceTests.Api.Diagnostics
 {
     [TestFixture]
     public class DiagnosticsTester

@@ -1,6 +1,7 @@
 ﻿using FluentNHibernate.Mapping;
+using __NAME__.Domain.Examples;
 
-namespace __NAME__.Domain.Persistence
+namespace __NAME__.Domain.Persistence.Examples
 {
     public class ExampleEntityMap : ClassMap<ExampleEntity>
     {
