@@ -112,15 +112,25 @@ For acceptance tests that communicate with the service layer via it's public int
 $ bundle exec rake acceptance
 ```
 
-### Build and Deployment Support
+### Continuous Integration and Deployment Support
 
-The `rake` tasks provided by Physique allow you to easily create a continuous integration build for the solution on your favorite CI server.
+The `rake` tasks provided by Physique allow you to easily create a continuous integration build on your favorite CI server.  Simply configure the following task to be run on every commit.  You can customize which tasks are run as part of the CI build in your `Rakefile`.
 
-The build scripts are also pre-configured to package and publish the applications to [Octopus Deploy](https://octopusdeploy.com).  If you are not using Octopus to deploy your apps, you can simply remove that configuration from your `Rakefile`.
+```
+$ bundle exec rake ci
+```
+
+The build scripts are also pre-configured to package and publish the applications to [Octopus Deploy](https://octopusdeploy.com) for deployment.  You should never check in your API key, but instead specify it as an environment variable of your build server.
+
+```
+$ OCTOPUS_API_KEY=<<Your API Key>> bundle exec rake publish
+```
+
+If you are not using Octopus to deploy your apps, you can simply remove that configuration from your `Rakefile`.
 
 ### Example Use Cases
 
-The template comes with an ExampleEntity domain entity which is manipulated by different parts of the service.  This entity is provided for illustrative purposes only and you may delete them at any time.
+The template comes with an ExampleEntity domain entity which is manipulated by different parts of the service.  This entity is provided for illustrative purposes only and you may delete it and any of its supporting classes at any time.
 
 ## Known Issues
 
