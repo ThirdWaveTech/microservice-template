@@ -2,6 +2,7 @@
 using AutoMapper;
 using Crux.Core.Bootstrapping;
 using Crux.Logging;
+using Crux.NancyFx.Infrastructure.Pipelines;
 using Nancy;
 using Nancy.Authentication.Token;
 using Nancy.Bootstrapper;
@@ -52,7 +53,7 @@ namespace __NAME__.Api.Infrastructure.Bootstrapping
             pipelines.AfterRequest += UnitOfWorkPipeline.AfterRequest();
 
             // Set up validation exception handling
-            pipelines.OnError += Crux.NancyFx.Infrastructure.Pipelines.Pipelines.OnHttpBadRequest;
+            pipelines.OnError += HttpBadRequestPipeline.OnHttpBadRequest;
         }
 
         private static void InitializeLogging()

@@ -33,29 +33,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Crux.Core">
-      <HintPath>..\packages\Crux.Core.0.1.44\lib\net40\Crux.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Crux.Domain">
-      <HintPath>..\packages\Crux.Domain.0.1.44\lib\net40\Crux.Domain.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Crux.Domain.Persistence">
-      <HintPath>..\packages\Crux.Domain.Persistence.0.1.44\lib\net40\Crux.Domain.Persistence.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Crux.Logging">
+    <Reference Include="Crux.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Crux.Logging.0.1.44\lib\net40\Crux.Logging.dll</HintPath>
+      <HintPath>..\packages\Crux.Core.0.2.1\lib\net40\Crux.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Crux.NServiceBus">
+    <Reference Include="Crux.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Crux.NServiceBus.0.1.44\lib\net40\Crux.NServiceBus.dll</HintPath>
+      <HintPath>..\packages\Crux.Domain.0.2.1\lib\net40\Crux.Domain.dll</HintPath>
     </Reference>
-    <Reference Include="Crux.StructureMap">
+    <Reference Include="Crux.Domain.Persistence, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Crux.StructureMap.0.1.44\lib\net40\Crux.StructureMap.dll</HintPath>
+      <HintPath>..\packages\Crux.Domain.Persistence.0.2.1\lib\net40\Crux.Domain.Persistence.dll</HintPath>
+    </Reference>
+    <Reference Include="Crux.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Crux.Logging.0.2.1\lib\net40\Crux.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Crux.NServiceBus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Crux.NServiceBus.0.2.1\lib\net40\Crux.NServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="Crux.StructureMap, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Crux.StructureMap.0.2.1\lib\net40\Crux.StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="FluentNHibernate">
       <HintPath>..\packages\FluentNHibernate.2.0.1.0\lib\net40\FluentNHibernate.dll</HintPath>

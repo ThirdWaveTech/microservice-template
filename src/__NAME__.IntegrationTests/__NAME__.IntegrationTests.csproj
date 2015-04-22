@@ -33,20 +33,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Crux.Core">
-      <HintPath>..\packages\Crux.Core.0.1.44\lib\net40\Crux.Core.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Crux.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Crux.Core.0.2.1\lib\net40\Crux.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Crux.Domain">
-      <HintPath>..\packages\Crux.Domain.0.1.44\lib\net40\Crux.Domain.dll</HintPath>
+    <Reference Include="Crux.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Crux.Domain.0.2.1\lib\net40\Crux.Domain.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Crux.Domain.Persistence">
-      <HintPath>..\packages\Crux.Domain.Persistence.0.1.44\lib\net40\Crux.Domain.Persistence.dll</HintPath>
+      <HintPath>..\packages\Crux.Domain.Persistence.0.2.1\lib\net40\Crux.Domain.Persistence.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Crux.Domain.Testing">
-      <HintPath>..\packages\Crux.Domain.Testing.0.1.44\lib\net40\Crux.Domain.Testing.dll</HintPath>
+    <Reference Include="Crux.Domain.Testing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Crux.Domain.Testing.0.2.1\lib\net40\Crux.Domain.Testing.dll</HintPath>
     </Reference>
     <Reference Include="FluentAssertions">
       <HintPath>..\packages\FluentAssertions.3.3.0\lib\net45\FluentAssertions.dll</HintPath>

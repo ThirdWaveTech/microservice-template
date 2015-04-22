@@ -4,8 +4,8 @@ using AutoMapper.QueryableExtensions;
 using Crux.Domain.Entities;
 using Crux.NancyFx.Infrastructure.Extensions;
 using Nancy;
-using NServiceBus;
 using __NAME__.Domain;
+using __NAME__.MessageBus.Client;
 using __NAME__.Messages.Example;
 using __NAME__.Models.Example;
 
@@ -13,7 +13,7 @@ namespace __NAME__.Api.App.Example
 {
     public class ExampleModule : NancyModule
     {
-        public ExampleModule(IRepositoryOfId<int> repository, IMappingEngine engine, IBus bus)
+        public ExampleModule(IRepositoryOfId<int> repository, IMappingEngine engine, ExampleSender sender)
         {
             Get["/examples"] = _ => repository.Query<ExampleEntity>()
                 .Project().To<ExampleModel>()
@@ -34,7 +34,8 @@ namespace __NAME__.Api.App.Example
 
             Post["/examples/close"] = _ => {
                 var model = this.BindAndValidateModel<CloseExampleModel>();
-                bus.Send(new CloseExampleCommand {Id = model.Id});
+
+                sender.CloseExample(model.Id);
 
                 return HttpStatusCode.OK;
             };
