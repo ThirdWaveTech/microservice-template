@@ -98,6 +98,10 @@ The `rake` tasks provided by Physique allow you to easily create a continuous in
 
 The build scripts are also pre-configured to package and publish the applications to [Octopus Deploy](https://octopusdeploy.com).  If you are not using Octopus to deploy your apps, you can simply remove that configuration from your `Rakefile`.
 
+## Known Issues
+
+There is an issue in the database drop script when providing a dotted replacement token. (i.e. "MyCompany.MyService"). SQLCMD.exe which runs the scripts, doesn't like dotted parameters.  If you use a dotted name, remember to remove the dots in the database name in the generated connection strings and Rakefile.
+
 ## Support
 
 Feel free to contact me [@scardetto](https://twitter.com/scardetto) if you have any questions.

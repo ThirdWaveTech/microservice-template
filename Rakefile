@@ -17,7 +17,7 @@ Physique::Solution.new do |s|
   s.octopus_deploy do |octo|
     octo.server = 'http://build/nuget/packages'
     octo.api_key = ENV['OCTOPUS_API_KEY']
-    
+
     octo.deploy_app do |app|
       app.name = 'database'
       app.type = :console
