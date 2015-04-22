@@ -40,11 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConventionExtensions.cs" />
+    <Compile Include="Diagnostics\PingCommand.cs" />
+    <Compile Include="Example\CloseExampleCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Commands\" />
-    <Folder Include="Events\" />
+    <ProjectReference Include="..\__NAME__.Models\__NAME__.Models.csproj">
+      <Project>{71A42623-F570-45FC-B7CF-B8CF4EBCA747}</Project>
+      <Name>__NAME__.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

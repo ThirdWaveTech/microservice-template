@@ -1,7 +1,7 @@
 ﻿using System;
 using Crux.Domain.Entities;
+using Crux.Domain.Persistence;
 using Crux.Domain.Persistence.NHibernate;
-using Crux.Domain.UoW;
 using NHibernate;
 using StructureMap.Configuration.DSL;
 using __NAME__.Domain;
@@ -13,20 +13,20 @@ namespace __NAME__.MessageBus.Infrastructure.Bootstrapping
     {
         public NHibernateRegistry()
         {
-            // Handle Setter Injection
-            SetAllProperties(s => s.OfType<IUnitOfWork>());
+            // Configure session factory
+            ForSingletonOf<ISessionFactory>()
+                .Use(c => new SessionFactoryConfig().CreateSessionFactory());
+
+            // Configure connection provider
+            ForSingletonOf<IDbConnectionProvider>()
+                .Use(c => SqlConnectionProvider.FromConnectionStringKey("__NAME__"));
+
+            For<INHibernateUnitOfWork>().Use<NHibernateUnitOfWork>();
 
             // Persistence Infrastructure
             For<IRepositoryOfId<int>>().Use<NHibernateRepositoryOfId<int>>();
             For<IRepositoryOfId<Guid>>().Use<NHibernateRepositoryOfId<Guid>>();
             For<IRepository>().Use<NHibernateRepository>();
-
-            For<IUnitOfWork>()
-                .HybridHttpOrThreadLocalScoped()
-                .Use<NHibernateUnitOfWork>();
-
-            ForSingletonOf<ISessionFactory>()
-                .Use(c => new SessionFactoryConfig().CreateSessionFactory());
 
             For<IStatelessSession>()
                 .Use(c => c.GetInstance<ISessionFactory>().OpenStatelessSession());

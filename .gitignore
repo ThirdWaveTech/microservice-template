@@ -200,3 +200,7 @@ working/*
 working*
 
 src/SouthFloridaVision.userprefs
+
+# Ignore NancyFx keyStore
+keyStore/
+src/__NAME__.Api/App_Data/nsb_log*.txt

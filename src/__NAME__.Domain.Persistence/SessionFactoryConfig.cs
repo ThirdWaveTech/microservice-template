@@ -1,4 +1,5 @@
-﻿using Crux.Domain.Persistence.NHibernate.Config;
+﻿using System.Reflection;
+using Crux.Domain.Persistence.NHibernate.Config;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
@@ -8,23 +9,26 @@ namespace __NAME__.Domain.Persistence
 {
     public class SessionFactoryConfig
     {
-        private const string CONNECTION_STRING = "__NAME__";
-
-        protected virtual MsSqlConfiguration GetMsSqlConfiguration()
+        protected virtual IPersistenceConfigurer GetDatabaseConfiguration()
         {
             return MsSqlConfiguration.MsSql2012
-                .ConnectionString(b => b.FromConnectionStringWithKey(CONNECTION_STRING));
+                .ConnectionString(b => b.FromConnectionStringWithKey("__NAME__"));
         }
 
-        public ISessionFactory CreateSessionFactory()
+        public virtual ISessionFactory CreateSessionFactory()
+        {
+            return CreateSessionFactory(GetType().Assembly);
+        }
+
+        protected ISessionFactory CreateSessionFactory(Assembly classMapAssembly)
         {
             return Fluently.Configure()
-                .Database(GetMsSqlConfiguration())
-                .ExposeConfiguration(config =>
-                    config.SetProperty(Environment.SqlExceptionConverter, typeof(SqlExceptionConverter).AssemblyQualifiedName))
-                .Mappings(m => m.FluentMappings
-                    .AddFromAssembly(GetType().Assembly)
-                    .Conventions.Add<TreatStringAsSqlAnsiStringConvention>()
+                .Database(GetDatabaseConfiguration())
+                .ExposeConfiguration(config => config.SetProperty(Environment.SqlExceptionConverter, typeof(SqlExceptionConverter).AssemblyQualifiedName))
+                .Mappings(m => 
+                    m.FluentMappings
+                        .AddFromAssembly(classMapAssembly)
+                        .Conventions.Add<TreatStringAsSqlAnsiStringConvention>()
                 ).BuildSessionFactory();
         }
     }
