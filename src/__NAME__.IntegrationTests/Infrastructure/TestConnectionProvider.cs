@@ -21,10 +21,12 @@ namespace __NAME__.IntegrationTests.Infrastructure
 
         public IDbConnection GetConnection()
         {
-            return new SqlConnection(GetConnectionString());
+            var connection = new SqlConnection(GetConnectionString());
+            connection.Open();
+            return connection;
         }
 
-        private string GetConnectionString()
+        public string GetConnectionString()
         {
             var connectionString = ConfigurationManager.ConnectionStrings[_connectionStringKey];
 
@@ -33,7 +35,6 @@ namespace __NAME__.IntegrationTests.Infrastructure
             }
 
             return ReplaceTokens(connectionString.ConnectionString);
-
         }
 
         private string ReplaceTokens(string connectionString)
