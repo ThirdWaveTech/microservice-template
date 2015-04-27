@@ -13,10 +13,7 @@ namespace __NAME__.IntegrationTests.Persistence.Examples
             var entity = new ExampleEntity("test");
             var newEntity = VerifyPersistence(entity);
 
-            newEntity.ID.Should().Be(entity.ID);
-            newEntity.Name.Should().Be(entity.Name);
-            newEntity.Status.Should().Be(entity.Status);
-            newEntity.Timestamp.Should().Be(entity.Timestamp);
+            newEntity.ShouldBeEquivalentTo(entity, DefaultCompareConfig.Compare);
         }
     }
 }

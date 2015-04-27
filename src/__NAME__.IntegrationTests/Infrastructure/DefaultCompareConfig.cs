@@ -14,7 +14,7 @@ namespace __NAME__.IntegrationTests.Infrastructure
                 .Using(new DefaultMemberSelectionRule(typeof(T).Name));
 
             equivalencyAssertionOptions
-                .Using<DateTime>(ctx => ctx.Subject.Should().BeCloseTo(ctx.Expectation, (int)1.Seconds().TotalMilliseconds))
+                .Using<DateTime>(ctx => ctx.Subject.Should().BeCloseTo(ctx.Expectation, (int)1.Minutes().TotalMilliseconds))
                 .WhenTypeIs<DateTime>();
 
             equivalencyAssertionOptions
