@@ -17,7 +17,7 @@ namespace __NAME__.AcceptanceTests.Api.Diagnostics
         }
 
         [Test]
-        public async void should_list_examples()
+        public async void should_report_all_status_as_ok()
         {
             var models = await _client.ListStatus();
 
