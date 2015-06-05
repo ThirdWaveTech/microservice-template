@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using AutoMapper;
 using Crux.Core.Bootstrapping;
-using Crux.Logging;
 using Crux.NancyFx.Infrastructure.Pipelines;
 using Nancy;
 using Nancy.Authentication.Token;
@@ -58,7 +57,7 @@ namespace __NAME__.Api.Infrastructure.Bootstrapping
 
         private static void InitializeLogging()
         {
-            new LoggingConfigurator().Configure();
+            log4net.Config.XmlConfigurator.Configure();
         }
 
         private static void InitializeStartupRunners(IContainer existingContainer)
