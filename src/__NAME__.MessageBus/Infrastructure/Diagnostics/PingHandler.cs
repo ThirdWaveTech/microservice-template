@@ -1,4 +1,4 @@
-﻿using Crux.Logging;
+﻿using log4net;
 using NServiceBus;
 using __NAME__.Messages.Diagnostics;
 
@@ -10,7 +10,7 @@ namespace __NAME__.MessageBus.Infrastructure.Diagnostics
 
         public void Handle(PingCommand message)
         {
-            Log.Info("Ping received from {0} with Id {1} created on {2}", 
+            Log.InfoFormat("Ping received from {0} with Id {1} created on {2}", 
                 message.Sender, 
                 message.Id, 
                 message.DateCreated);

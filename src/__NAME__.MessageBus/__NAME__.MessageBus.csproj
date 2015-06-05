@@ -45,10 +45,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Crux.Domain.Persistence.0.2.1\lib\net40\Crux.Domain.Persistence.dll</HintPath>
     </Reference>
-    <Reference Include="Crux.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Crux.Logging.0.2.1\lib\net40\Crux.Logging.dll</HintPath>
-    </Reference>
     <Reference Include="Crux.NServiceBus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Crux.NServiceBus.0.2.1\lib\net40\Crux.NServiceBus.dll</HintPath>
