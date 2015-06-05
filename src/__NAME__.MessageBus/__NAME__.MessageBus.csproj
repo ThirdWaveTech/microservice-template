@@ -132,6 +132,8 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="PreDeploy.ps1" />
+    <Content Include="PostDeploy.ps1" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

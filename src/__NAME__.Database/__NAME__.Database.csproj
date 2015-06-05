@@ -49,7 +49,6 @@
     <Compile Include="Examples\20150412194400_ExampleEntity.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <Content Include="Deploy.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
