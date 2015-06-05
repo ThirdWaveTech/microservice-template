@@ -168,9 +168,9 @@
     <Compile Include="App\Example\ExampleModule.cs" />
     <Compile Include="Infrastructure\Diagnostics\PingModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="PreDeploy.ps1" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="App_Data\Config\Prod\ConnectionStrings.config" />
   </ItemGroup>
